@@ -6,7 +6,7 @@ import Modal from "../../Modal/Modal";
 const Header = () => {
     const [modalData, setModalData] = useState<ModalData>();
 
-    const showInfo = (event: MouseEvent, header = '') => {
+    const showInfo = (event: React.MouseEvent<Element, MouseEvent>, header = '') => {
         event.preventDefault();
         let data: ModalData
         switch (header) {
