@@ -1,0 +1,41 @@
+.modal {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: 1px solid var(--text-shadow); */
+  border-radius: 15px;
+  padding: 20px;
+  background: linear-gradient(
+    to left,
+    var(--background-orange-start),
+    var(--background-orange-end)
+  );
+  box-shadow: 1px 1px 12px 2px var(--text-shadow);
+}
+
+.close {
+  position: relative;
+  cursor: pointer;
+}
+
+.close::after,
+.close::before {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 1em;
+  right: 0;
+  bottom: 50%;
+  background-color: white;
+}
+
+.close::after {
+  rotate: 45deg;
+}
+
+.close::before {
+  rotate: 135deg;
+}

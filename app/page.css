@@ -1,0 +1,36 @@
+body {
+  background: #ffffff;
+}
+
+body {
+  background: linear-gradient(#fead0d, #feb62c);
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+/* .order {
+    padding: 10px 20px;
+    background-color: #fead0d;
+    border: 2px solid white;
+    border-radius: 5px;
+} */
+
+main {
+  background: linear-gradient(to left, var(--background-orange-start), var(--background-orange-end));
+  background-image: url("/img/girl-cuted.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+.welcome .top-links,
+.agitate {
+  text-shadow: 2px 0 var(--text-shadow), -2px 0 var(--text-shadow), 0 2px var(--text-shadow), 0 -2px var(--text-shadow), 1px 1px var(--text-shadow),
+    -1px -1px var(--text-shadow), 1px -1px var(--text-shadow), -1px 1px var(--text-shadow);
+}
+
+:root {
+  --foreground-rgb: 255, 0, 0;
+  --background-start-rgb: 0, 219, 220;
+  --background-end-rgb: 0, 255, 255;
+}
