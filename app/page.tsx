@@ -6,28 +6,56 @@ import Header from './components/pages/mainpage/header'
 export default function Home() {
 
   return (
-    <main className='min-h-screen flex-row justify-center flex' >
+    <main >
+      {/* // className='min-h-screen flex-row justify-center flex' > */}
+      <Header className='welcome ' />
       {/* className="flex min-h-screen min-w-prose flex-row justify-between "> */}
-      <div className="content max-w-screen-xl w-full flex flex-col justify-between">
-        <section className='welcome w-full flex no-wrap justify-between p-10'>
-          <Header />
-        </section>
-        <section className='agitate h-full p-[50px] items-center flex'>
-          <div className="w-full flex justify-between">
-            <div className='left flex flex-col'>
-              <h1>С нами -</h1>
-              <h1>учить языки проще.</h1>
-              <h1>Начните и Вы!</h1>
-              <p>Онлайн-школа, которая нравится Вашим детям</p>
-            </div>
-            <div className="right order mt-[auto]">
-              <a href="/"><h1>
-                <WaveTextAnimator text={'Оставить заявку'} />
-              </h1></a>
-            </div>
+      {/* <div className="content max-w-screen-xl w-full flex flex-col justify-between"> */}
+      <section className='content agitate p-[50px] items-center flex'>
+        <div className="w-full flex justify-between">
+          <div className='left flex flex-col'>
+            <h1>С нами -</h1>
+            <h1>учить языки проще.</h1>
+            <h1>Начните и Вы!</h1>
+            <p>Онлайн-школа, которая нравится Вашим детям</p>
           </div>
-        </section>
-      </div>
+          <div className="right order mt-[auto]">
+            <a href="/"><h1>
+              <WaveTextAnimator text={'Оставить заявку'} />
+            </h1></a>
+          </div>
+        </div>
+      </section>
+      <section className='content students flex items-end'>
+        <div className='float-care absolute top-[40px] left-[50px] max-w-[30%]'>
+          <h1>С заботой о клинтах.</h1>
+          <h1>Подберём индивидуальный курс обучения для вас!</h1>
+        </div>
+        <div className='bottom-promo flex flex-row gap-[10%] ml-[10%] mr-[10%]'>
+          <div className='promo-item'>
+            <div>
+              <h2>Английский для школы</h2>
+              <p>2-11 классы</p>
+            </div>
+            <img src="/img/books.webp" alt="books" />
+          </div>
+          <div className='promo-item'>
+            <div>
+              <h2>Английский для путешествий</h2>
+              <p>Изучим диалект и базовые фразы для путешествий</p>
+            </div>
+            <img src="/img/ticketpng.png" alt="books" />
+          </div>
+          <div className='promo-item'>
+            <div>
+              <h2>Экзамены по английскому</h2>
+              <p>Подготовим к контрольной, ВПР или ОГЭ</p>
+            </div>
+            <img src="/img/checklist.webp" alt="books" />
+          </div>
+        </div>
+      </section>
+      {/* </div> */}
       {/* <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;

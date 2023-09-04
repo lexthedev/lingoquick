@@ -6,7 +6,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --text-shadow: #6c4800;
+  --box-shadow: #6c4800;
+  --text-shadow: #6c480010;
   --background-orange-start: #fead0d;
   --background-orange-end: #feb62c;
 }

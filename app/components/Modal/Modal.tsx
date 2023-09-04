@@ -13,11 +13,11 @@ interface ModalProps extends ModalData {
 const Modal = (props: ModalProps) => {
     const { headerText, text, onClose } = props;
     return <div className="modal z-10">
-        <h1 className="flex justify-between">
-            <div>{headerText}</div>
-            <div className="close"
-                onClick={() => onClose()}></div>
+        <h1 className="modal-header flex justify-between gap-[30px]">
+            {headerText}
         </h1>
+        <div className="close"
+            onClick={() => onClose()}></div>
         <div className="mt-[15px]">
             {text}
         </div>

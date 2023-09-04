@@ -3,30 +3,76 @@ body {
 }
 
 body {
-  background: linear-gradient(#fead0d, #feb62c);
+  /* background: linear-gradient(#fead0d, #feb62c); */
   color: #ffffff;
   font-weight: bolder;
 }
 
-/* .order {
-    padding: 10px 20px;
-    background-color: #fead0d;
-    border: 2px solid white;
-    border-radius: 5px;
-} */
+.header {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
 
-main {
-  background: linear-gradient(to left, var(--background-orange-start), var(--background-orange-end));
-  background-image: url("/img/girl-cuted.png");
+.content {
+  height: 100vh;
+}
+
+.agitate {
+  position: relative;
+  background: linear-gradient(
+    to left,
+    var(--background-orange-start),
+    var(--background-orange-end)
+  );
+  background-image: url("/img/girl-stupid.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: auto 100%;
+  /* background-size: auto 100%; */
+  background-size: cover;
+  /* height: 100vh; */
+}
+
+.students {
+  position: relative;
+  background: linear-gradient(
+    to left,
+    var(--background-orange-start),
+    var(--background-orange-end)
+  );
+  background-image: url("/img/woman-smile.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.bottom-promo .promo-item {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: column;
+  justify-content: top;
+  margin-bottom: 30px;
+}
+
+.bottom-promo .promo-item h2,
+.bottom-promo .promo-item p {
+  text-align: center;
+}
+
+.bottom-promo .promo-item img {
+  margin-top: 15px;
+  width: 50%;
+  height: auto;
 }
 
 .welcome .top-links,
-.agitate {
-  text-shadow: 2px 0 var(--text-shadow), -2px 0 var(--text-shadow), 0 2px var(--text-shadow), 0 -2px var(--text-shadow), 1px 1px var(--text-shadow),
-    -1px -1px var(--text-shadow), 1px -1px var(--text-shadow), -1px 1px var(--text-shadow);
+.agitate,
+.bottom-promo {
+  text-shadow: 2px 0 var(--text-shadow), -2px 0 var(--text-shadow),
+    0 2px var(--text-shadow), 0 -2px var(--text-shadow),
+    1px 1px var(--text-shadow), -1px -1px var(--text-shadow),
+    1px -1px var(--text-shadow), -1px 1px var(--text-shadow);
 }
 
 :root {

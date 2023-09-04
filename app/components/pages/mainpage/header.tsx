@@ -3,7 +3,8 @@ import { ModalData } from "../..";
 import { useState } from 'react';
 import Modal from "../../Modal/Modal";
 
-const Header = () => {
+const Header = (props: { className: string }) => {
+    const { className } = props;
     const [modalData, setModalData] = useState<ModalData>();
 
     const showInfo = (event: React.MouseEvent<Element, MouseEvent>, header = '') => {
@@ -52,8 +53,8 @@ const Header = () => {
         setModalData(data);
     }
 
-    return <>
-        <div className="top-links left flex gap-10">
+    return <div className="header w-full flex no-wrap justify-between p-10">
+        <div className={"top-links left flex gap-10 "}>
             <a href="/" >
                 Lingo Quick
             </a>
@@ -76,7 +77,7 @@ const Header = () => {
             onClose={() => setModalData(undefined)}
             {...modalData}
         />}
-    </>
+    </div>
 }
 
 export default Header;

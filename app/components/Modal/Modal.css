@@ -1,7 +1,7 @@
 .modal {
   display: block;
   position: absolute;
-  top: 50%;
+  top: 200px;
   left: 50%;
   transform: translate(-50%, -50%);
   /* border: 1px solid var(--text-shadow); */
@@ -12,12 +12,18 @@
     var(--background-orange-start),
     var(--background-orange-end)
   );
-  box-shadow: 1px 1px 12px 2px var(--text-shadow);
+  box-shadow: 1px 1px 12px 2px var(--box-shadow);
 }
 
+/* .modal-header {
+  justify-content: baseline;
+} */
+
 .close {
-  position: relative;
+  position: absolute;
   cursor: pointer;
+  right: 15px;
+  top: 20px;
 }
 
 .close::after,
