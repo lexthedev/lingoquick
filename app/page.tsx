@@ -1,31 +1,28 @@
 // import Image from 'next/image'
 import './page.css'
-import WaveTextAnimator from './components/WaveText/WaveTextAnimator'
-import Header from './components/pages/mainpage/header'
+// import googleSheets from './services/googleSheets';
+import Section1Content from './components/pages/mainpage/Sections/section1Content';
+import { StudentInfo } from './components';
+// import { googleSheets } from './components/APIs/serverSideGoogle';
+// import { getServerProps } from './components/APIs/serverSideGoogle'
 
-export default function Home() {
+export default async function Home() {
+
+  // const sheets = googleSheets();
+
+  const onAddRequest = (data: StudentInfo) => {
+
+  }
 
   return (
     <main >
       {/* // className='min-h-screen flex-row justify-center flex' > */}
-      <Header className='welcome ' />
+      {/* <Header sheets={sheets} /> */}
       {/* className="flex min-h-screen min-w-prose flex-row justify-between "> */}
       {/* <div className="content max-w-screen-xl w-full flex flex-col justify-between"> */}
-      <section className='content agitate p-[50px] items-center flex'>
-        <div className="w-full flex justify-between">
-          <div className='left flex flex-col'>
-            <h1>С нами -</h1>
-            <h1>учить языки проще.</h1>
-            <h1>Начните и Вы!</h1>
-            <p>Онлайн-школа, которая нравится Вашим детям</p>
-          </div>
-          <div className="right order mt-[auto]">
-            <a href="/"><h1>
-              <WaveTextAnimator text={'Оставить заявку'} />
-            </h1></a>
-          </div>
-        </div>
-      </section>
+      <Section1Content
+      // onAddRequest={(data) => onAddRequest(data)}
+      />
       <section className='content students flex items-end'>
         <div className='float-care absolute top-[40px] left-[50px] max-w-[30%]'>
           <h1>С заботой о клинтах.</h1>
