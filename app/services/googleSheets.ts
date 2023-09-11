@@ -1,10 +1,10 @@
 import { GoogleAuth } from 'google-auth-library';
 import { google } from 'googleapis';
-import googleAuthService from './googleService';
+import initGoogleAuthService from './googleService';
 
 const googleSheets = async () => {
     const scopes = ["https://www.googleapis.com/auth/spreadsheets"];
-    const auth = googleAuthService(scopes);
+    const auth = initGoogleAuthService(scopes);
 
     const sheets = google.sheets({ version: 'v4', auth });
 

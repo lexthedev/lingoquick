@@ -1,57 +1,13 @@
 // import Image from 'next/image'
 import './page.css'
-// import googleSheets from './services/googleSheets';
-import Section1Content from './components/pages/mainpage/Sections/section1Content';
-import { StudentInfo } from './components';
-// import { googleSheets } from './components/APIs/serverSideGoogle';
-// import { getServerProps } from './components/APIs/serverSideGoogle'
+import { Section1Content, Section2Content, StudentInfo } from './components';
 
 export default async function Home() {
 
-  // const sheets = googleSheets();
-
-  const onAddRequest = (data: StudentInfo) => {
-
-  }
-
   return (
     <main >
-      {/* // className='min-h-screen flex-row justify-center flex' > */}
-      {/* <Header sheets={sheets} /> */}
-      {/* className="flex min-h-screen min-w-prose flex-row justify-between "> */}
-      {/* <div className="content max-w-screen-xl w-full flex flex-col justify-between"> */}
-      <Section1Content
-      // onAddRequest={(data) => onAddRequest(data)}
-      />
-      <section className='content students flex items-end'>
-        <div className='float-care absolute top-[40px] left-[50px] max-w-[30%]'>
-          <h1>С заботой о клинтах.</h1>
-          <h1>Подберём индивидуальный курс обучения для вас!</h1>
-        </div>
-        <div className='bottom-promo flex flex-row gap-[10%] ml-[10%] mr-[10%]'>
-          <div className='promo-item'>
-            <div>
-              <h2>Английский для школы</h2>
-              <p>2-11 классы</p>
-            </div>
-            <img src="/img/books.webp" alt="books" />
-          </div>
-          <div className='promo-item'>
-            <div>
-              <h2>Английский для путешествий</h2>
-              <p>Изучим диалект и базовые фразы для путешествий</p>
-            </div>
-            <img src="/img/ticketpng.png" alt="books" />
-          </div>
-          <div className='promo-item'>
-            <div>
-              <h2>Экзамены по английскому</h2>
-              <p>Подготовим к контрольной, ВПР или ОГЭ</p>
-            </div>
-            <img src="/img/checklist.webp" alt="books" />
-          </div>
-        </div>
-      </section>
+      <Section1Content />
+      <Section2Content />
       {/* </div> */}
       {/* <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">

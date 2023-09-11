@@ -1,7 +1,5 @@
 "use client";
 import { useState } from "react";
-// import { useGoogleService } from "../../../APIs/serverSideGoogle";
-// import { googleSheets } from "@/app/components/APIs/serverSideGoogle";
 import './requestFreeLesson.css';
 import { sheets_v4 } from "googleapis";
 import addRequest from "@/app/services/addRequest";
@@ -19,9 +17,8 @@ export interface StudentInfo {
     email: string;
 }
 
-const RequestFreeLesson = (props: RequestFreeLessonProps) => {
+export const RequestFreeLesson = (props: RequestFreeLessonProps) => {
 
-    // const info = useGoogleService();
     const { onAddRequest } = props;
     const [currentPage, setCurrentPage] = useState(1);
     const [studentInfo, setStudentInfo] = useState<StudentInfo>(
@@ -44,13 +41,12 @@ const RequestFreeLesson = (props: RequestFreeLessonProps) => {
     }
 
     return <div>
-        {/* <h2>Сделай первый шаг к изучению языков с Lingo Quick</h2> */}
         {currentPage === 1 &&
             <div className="request-page">
                 <div className="request-questionnaire">
                     <input className="request-field" type="text" placeholder="Ваше имя" onChange={e => addInfo('name', e.target.value)} />
                     <input className="request-field" type="number" placeholder="Ваш возраст" onChange={e => addInfo('age', e.target.value)} />
-                    <select className="request-field" placeholder="Цель обучения" defaultValue={""} onChange={e => addInfo('name', e.target.value)} >
+                    <select className="request-field" placeholder="Цель обучения" defaultValue={""} onChange={e => addInfo('target', e.target.value)} >
                         <option value="" disabled >{"Цель обучения"}</option>
                         <option value="Нравится изучать языки">{"Нравится изучать языки"}</option>
                         <option value="Подготовка к огэ">{"Подготовка к огэ"}</option>
@@ -82,5 +78,3 @@ const RequestFreeLesson = (props: RequestFreeLessonProps) => {
         }
     </div>
 }
-
-export default RequestFreeLesson;

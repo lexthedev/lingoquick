@@ -1,26 +1,24 @@
 "use client";
 import WaveTextAnimator from "@/app/components/WaveText/WaveTextAnimator";
-import RequestFreeLesson, { StudentInfo } from "../RequestFreeLesson/requestFreeLesson";
+import { RequestFreeLesson, StudentInfo } from "../RequestFreeLesson/requestFreeLesson";
 import { ModalData } from "@/app/components";
 import { useState } from "react";
 import Modal from "@/app/components/Modal/Modal";
 import addRequest from "@/app/services/addRequest";
-import { config } from "process";
-import { sheets_v4 } from "googleapis";
 
-interface Section1ContentProps {
-    // onAddRequest: (data: StudentInfo) => void;
-    // sheets: Promise<sheets_v4.Sheets>;
-}
-
-const Section1Content = (props: Section1ContentProps) => {
+export const Section1Content = () => {
     // const { sheets } = props;
     const [modalData, setModalData] = useState<ModalData>();
-    const requestSubmit = (data: StudentInfo) => {
+    const requestSubmit = async (data: StudentInfo) => {
         // addRequest({ data: data, onClose: () => { } });
-        addRequest();
         // props.onAddRequest(data);
         showInfo('wait');
+        const status = await addRequest(data);
+        if (status === 200) {
+            showInfo('ok')
+        } else {
+            showInfo('error')
+        };
     }
 
     const showInfo = (header = '') => {
@@ -69,6 +67,23 @@ const Section1Content = (props: Section1ContentProps) => {
                 data = {
                     headerText: 'Сделай первый шаг к изучению языков с Lingo Quick',
                     text: <div>Подождите...</div>
+                }
+                break;
+
+            case 'ok':
+                data = {
+                    headerText: 'Команда Lingo Quick гордится Вашим стремлением к знаниям!',
+                    text: <>
+                        <h2>Вы успешно записались!</h2>
+                        <span>С Вами свяжутся наши специалисты и всё-всё расскажут.</span>
+                    </>
+                }
+                break;
+
+            case 'error':
+                data = {
+                    headerText: 'Сделай первый шаг к изучению языков с Lingo Quick',
+                    text: <div>Произошла ошибка, попробуйте немного позднее.</div>
                 }
                 break;
 
@@ -136,5 +151,3 @@ const Section1Content = (props: Section1ContentProps) => {
         </section>
     </>
 }
-
-export default Section1Content;
