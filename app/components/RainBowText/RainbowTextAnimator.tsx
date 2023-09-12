@@ -1,12 +1,12 @@
 import { MouseEventHandler } from 'react';
-import './WaveText.css'
+import './Rainbow.css'
 
-interface WaveTextAnimatorProps {
+interface RainbowTextAnimatorProps {
     text: string;
     onClick?: MouseEventHandler<HTMLDivElement>;
 }
 
-const WaveTextAnimator = (props: WaveTextAnimatorProps) => {
+const RainbowTextAnimator = (props: RainbowTextAnimatorProps) => {
     const { text, onClick } = props;
 
     const getTextNodes = () => {
@@ -21,9 +21,9 @@ const WaveTextAnimator = (props: WaveTextAnimatorProps) => {
     }
 
     const textNodes = getTextNodes();
-    return <div className='wave-text' onClick={onClick}>
+    return <div className='rainbow-text' onClick={onClick}>
         {textNodes}
     </div>
 }
 
-export default WaveTextAnimator;
+export default RainbowTextAnimator;

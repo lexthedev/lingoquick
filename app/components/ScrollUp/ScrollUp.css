@@ -1,0 +1,53 @@
+.Scroll-up-btn {
+  position: sticky;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  top: 90vh;
+  right: 19px;
+  opacity: 0;
+  pointer-events: none;
+  background: #bb5a0040;
+  position: fixed;
+  /* width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #0c9;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center; */
+  box-shadow: 2px 2px 3px #999;
+  z-index: 2;
+  cursor: pointer;
+  transition: opacity cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
+}
+
+.Scroll-up-btn::after,
+.Scroll-up-btn::before {
+  position: absolute;
+  content: "";
+  width: 26px;
+  height: 3px;
+  background: white;
+  top: calc(50% - 5px);
+}
+
+.Scroll-up-btn::after {
+  transform: rotate(45deg);
+  left: calc(50% - 4px);
+}
+
+.Scroll-up-btn::before {
+  transform: rotate(-45deg);
+  right: calc(50% - 4px);
+}
+
+.Scroll-up-btn.show {
+  opacity: 0.3;
+  pointer-events: all;
+}
+
+.Scroll-up-btn.show:hover {
+  opacity: 1;
+}

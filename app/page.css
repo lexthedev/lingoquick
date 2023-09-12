@@ -1,6 +1,6 @@
-body {
+/* body {
   background: #ffffff;
-}
+} */
 
 body {
   /* background: linear-gradient(#fead0d, #feb62c); */
@@ -75,8 +75,45 @@ body {
     1px -1px var(--text-shadow), -1px 1px var(--text-shadow);
 }
 
-:root {
+/* :root {
   --foreground-rgb: 255, 0, 0;
   --background-start-rgb: 0, 219, 220;
   --background-end-rgb: 0, 255, 255;
+  --invert-font-color: 255,255, 255;
+} */
+
+/* #section-3 {
+  background: linear-gradient(rgb(var(--background-start-rgb)), rgb(var(--background-start-rgb)));
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  #section-3 {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+/* .faq-questions {
+  display: flex;
+  gap: 20px;
+  margin: 50px;
+} */
+
+#section-3 {
+  color: rgb(var(--invert-font-color));
+}
+
+.faq-questions .faq-answer {
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.footer {
+  /* justify-self: flex-end; */
+  margin-top: auto;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  text-align: center;
 }

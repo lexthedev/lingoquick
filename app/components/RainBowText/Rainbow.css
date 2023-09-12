@@ -1,0 +1,62 @@
+/* {
+  --rainbow-red: 'red';
+  --rainbow-orange: 'orange';
+} */
+/* rgb(255, 0, 0)
+  rgb(255, 154, 0)
+  rgb(208, 222, 33)
+  rgb(79, 220, 74)
+  rgb(63, 218, 216)
+  rgb(47, 201, 226)
+  rgb(28, 127, 238)
+  rgb(95, 21, 242)
+  rgb(186, 12, 248)
+  rgb(251, 7, 217)
+  rgb(255, 0, 0) */
+@keyframes rainbow-text {
+  0% {
+    color: rgb(255, 0, 0);
+  }
+  1% {
+    color: rgb(255, 154, 0);
+  }
+  2% {
+    color: rgb(208, 222, 33);
+  }
+  3% {
+    color: rgb(79, 220, 74);
+  }
+  4% {
+    color: rgb(63, 218, 216);
+  }
+  5% {
+    color: rgb(47, 201, 226);
+  }
+  6% {
+    color: rgb(28, 127, 238);
+  }
+  7% {
+    color: rgb(95, 21, 242);
+  }
+  8% {
+    color: rgb(186, 12, 248);
+  }
+  9% {
+    color: rgb(251, 7, 217);
+  }
+  10% {
+    color: rgb(var(--invert-font-color));
+  }
+  100% {
+    color: rgb(var(--invert-font-color));
+  }
+}
+
+.rainbow-text {
+  display: inline-flex;
+}
+
+.rainbow-text span {
+  display: inline-block;
+  animation: rainbow-text 10s ease-in-out infinite;
+}
