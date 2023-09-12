@@ -114,13 +114,13 @@ export const Section1Content = () => {
                 {/* <a href="/" > */}
                 <span>Lingo Quick</span>
                 {/* </a> */}
-                <a href="#section-3" >
+                <a href="?showFAQ=about#section-3" >
                     О школе
                 </a>
-                <a href="#section-3" >
+                <a href="?showFAQ=guarantees#section-3" >
                     Гарантии
                 </a>
-                <a href="#section-3" >
+                <a href="?showFAQ=graduates#section-3" >
                     Что Вы получите
                 </a>
             </div>

@@ -3,7 +3,7 @@
 export const Section2Content = () => {
     return <section className='content students flex items-end'>
         <div className='float-care absolute top-[40px] left-[50px] max-w-[30%]'>
-            <h1>С заботой о клинтах.</h1>
+            <h1>С заботой о клиентах.</h1>
             <h1>Подберём индивидуальный курс обучения для вас!</h1>
         </div>
         <div className='bottom-promo flex flex-row gap-[10%] ml-[10%] mr-[10%]'>
