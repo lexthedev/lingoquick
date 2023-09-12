@@ -9,7 +9,7 @@ export const Section3Content = () => {
     const search = searchParams.get('showFAQ');
     const [blockToShow, setBlockToShow] = useState<'about' | 'guarantees' | 'graduates' | string | null>(search);
 
-    return <section id="section-3" className='content flex flex-col p-[50px] pb-0 faq'>
+    return <section id="section-3" className='content flex flex-col text-center p-[50px] pb-0 faq'>
         <div className="faq-header flex m-[25px] flex-col justify-center">
             <h1 className="m-[25px]">Ответы на часто задаваемые вопросы</h1>
             <h3>Не нашли ответ на интересующий Вас вопрос? Задайте его в наших социальных сетях:</h3>
