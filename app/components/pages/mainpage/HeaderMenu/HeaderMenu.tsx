@@ -1,5 +1,4 @@
 'use client';
-import { ScreenSize } from "../Sections/section1Content"
 import SmallMenu from "./Smallmenu";
 
 const HeaderMenu = () => {
