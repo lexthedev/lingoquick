@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+'use client';
+import { ReactNode, useLayoutEffect } from "react";
 import '../Modal/Modal.css';
 
 export interface ModalData {
@@ -12,14 +13,24 @@ interface ModalProps extends ModalData {
 
 const Modal = (props: ModalProps) => {
     const { headerText, text, onClose } = props;
-    return <div className="modal z-10000">
-        <h1 className="modal-header flex justify-between gap-[30px]">
-            {headerText}
-        </h1>
-        <div className="close"
-            onClick={() => onClose()}></div>
-        <div className="mt-[15px]">
-            {text}
+
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+        document.body.style.overflow = "hidden";
+        return () => {
+            document.body.style.overflow = "auto"
+        }
+    })
+    return <div className="modal-wrapper">
+        <div className="modal">
+            <h1 className="modal-header flex justify-between gap-[30px]">
+                {headerText}
+            </h1>
+            <div className="close"
+                onClick={() => onClose()}></div>
+            <div className="mt-[15px]">
+                {text}
+            </div>
         </div>
     </div>
 }

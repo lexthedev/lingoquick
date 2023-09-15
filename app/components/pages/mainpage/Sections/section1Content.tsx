@@ -75,6 +75,10 @@ export const Section1Content = () => {
 
 
     return <>
+        {modalData && <Modal
+            onClose={() => setModalData(undefined)}
+            {...modalData}
+        />}
         <div className="header w-full flex no-wrap justify-between p-10">
             <HeaderMenu />
             <div className='top-links right flex flex-end'>
@@ -82,10 +86,6 @@ export const Section1Content = () => {
                     Запись на бесплатный урок
                 </a>
             </div>
-            {modalData && <Modal
-                onClose={() => setModalData(undefined)}
-                {...modalData}
-            />}
         </div>
         <section className='content agitate p-[50px] items-center flex'>
 
