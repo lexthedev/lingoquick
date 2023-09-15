@@ -15,6 +15,7 @@
 
 .wave-text {
   display: flex;
+  max-width: min-content;
 }
 
 .wave-text span {

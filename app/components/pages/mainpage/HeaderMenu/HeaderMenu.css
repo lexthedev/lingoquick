@@ -1,0 +1,137 @@
+/* animation for burger */
+.burger-menu .tri-menu {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.tri-menu span {
+  display: block;
+  position: absolute;
+  height: calc(100% * 1 / 5);
+  width: 50%;
+  background: #ffffff;
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.tri-menu span:nth-child(even) {
+  left: 50%;
+  /* border-radius: 0 9px 9px 0; */
+}
+
+.tri-menu span:nth-child(odd) {
+  left: 0px;
+  /* border-radius: 9px 0 0 9px; */
+}
+
+.tri-menu span:nth-child(1),
+.tri-menu span:nth-child(2) {
+  top: 0px;
+}
+
+.tri-menu span:nth-child(3),
+.tri-menu span:nth-child(4) {
+  top: calc(100% * 2 / 5);
+}
+
+.tri-menu span:nth-child(5),
+.tri-menu span:nth-child(6) {
+  top: calc(100% * 4 / 5);
+}
+
+.burger-menu.open .tri-menu span:nth-child(1),
+.burger-menu.open .tri-menu span:nth-child(6) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.burger-menu.open .tri-menu span:nth-child(2),
+.burger-menu.open .tri-menu span:nth-child(5) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.burger-menu.open .tri-menu span:nth-child(1) {
+  left: calc(100% * 1 / 12);
+  top: calc(100% * 1 / 6);
+}
+
+.burger-menu.open .tri-menu span:nth-child(2) {
+  left: calc(50% - 100% * 1 / 12);
+  top: calc(100% * 1 / 6);
+}
+
+.burger-menu.open .tri-menu span:nth-child(3) {
+  left: -50%;
+  opacity: 0;
+}
+
+.burger-menu.open .tri-menu span:nth-child(4) {
+  left: 100%;
+  opacity: 0;
+}
+
+.burger-menu.open .tri-menu span:nth-child(5) {
+  left: calc(100% * 1 / 12);
+  top: calc(100% * 2 / 3 - 1px);
+}
+
+.burger-menu.open .tri-menu span:nth-child(6) {
+  left: calc(50% - 100% * 1 / 12);
+  top: calc(100% * 2 / 3 - 1px);
+}
+
+/* animation for burger */
+
+.burger-menu {
+  display: grid;
+  grid-template-rows: auto 0fr;
+  transition: all ease-in-out 100ms;
+}
+
+.burger-menu.open {
+  grid-template-rows: auto 1fr;
+  padding: 5px;
+  margin: -5px;
+  background: linear-gradient(
+    to left,
+    rgb(var(--background-orange-start)),
+    rgb(var(--background-orange-end))
+  );
+  box-shadow: 1px 1px 12px 2px var(--box-shadow);
+}
+
+.burger-menu .menu {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.burger-menu .menu-items {
+  overflow: hidden;
+}
+
+.burger-menu .menu-items > * {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px var(--box-shadow);
+}
+
+.burger-menu .menu-items {
+  display: flex;
+  flex-direction: column;
+}

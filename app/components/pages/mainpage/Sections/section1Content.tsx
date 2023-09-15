@@ -1,18 +1,16 @@
 "use client";
-// import WaveTextAnimator from "@/app/components/WaveText/WaveTextAnimator";
 import { RequestFreeLesson, StudentInfo } from "../RequestFreeLesson/requestFreeLesson";
 import { ModalData } from "@/app/components";
 import { useState } from "react";
 import Modal from "@/app/components/Modal/Modal";
 import addRequest from "@/app/services/addRequest";
 import WaveTextAnimator from "@/app/components/WaveText/WaveTextAnimator";
+import HeaderMenu from "../HeaderMenu/HeaderMenu";
 
 export const Section1Content = () => {
     // const { sheets } = props;
     const [modalData, setModalData] = useState<ModalData>();
     const requestSubmit = async (data: StudentInfo) => {
-        // addRequest({ data: data, onClose: () => { } });
-        // props.onAddRequest(data);
         showInfo('wait');
         const status = await addRequest(data);
         if (status === 200) {
@@ -25,38 +23,6 @@ export const Section1Content = () => {
     const showInfo = (header = '') => {
         let data: ModalData
         switch (header) {
-            // case 'about':
-            //     data = {
-            //         headerText: 'О школе',
-            //         text: <>
-            //             <p>Lingo Quick- ассоциация молодых лингвистов, обучающая иностранным языкам школьников 1-11 класс</p>
-            //             <p>3 языковых направления: английский, испанский, турецкий</p>
-            //             <p>Преимущество в цене и множество акций</p>
-            //         </>
-            //     }
-            //     break;
-
-            // case 'guarantees':
-            //     data = {
-            //         headerText: 'Гарантии',
-            //         text: <>
-            //             <p>Lingo Quick гарантирует ученикам повышение уровня иностранного языка, а также успеваемости в школе.</p>
-            //             <p>Наша команда поможет преодолеть языковой барьер и научит</p>
-            //             <p>ГОВОРИТЬ!</p>
-            //         </>
-            //     }
-            //     break;
-
-            // case 'graduates':
-            //     data = {
-            //         headerText: 'Что получат наши выпускники?',
-            //         text: <>
-            //             <p>Lingo Quick поможет понять и полюбить иностранный язык.</p>
-            //             <p>Повысит успеваемость в школе и сделает изучение разговорной части  языка увлекательным! </p>
-            //         </>
-            //     }
-            //     break;
-
             case 'request':
                 data = {
                     headerText: 'Сделай первый шаг к изучению языков с Lingo Quick',
@@ -110,20 +76,7 @@ export const Section1Content = () => {
 
     return <>
         <div className="header w-full flex no-wrap justify-between p-10">
-            <div className={"top-links left flex gap-10 "}>
-                {/* <a href="/" > */}
-                <span>Lingo Quick</span>
-                {/* </a> */}
-                <a href="?showFAQ=about#section-3" >
-                    О школе
-                </a>
-                <a href="?showFAQ=guarantees#section-3" >
-                    Гарантии
-                </a>
-                <a href="?showFAQ=graduates#section-3" >
-                    Что Вы получите
-                </a>
-            </div>
+            <HeaderMenu />
             <div className='top-links right flex flex-end'>
                 <a href="/" onClick={e => onClickShowInfo(e, 'request')}>
                     Запись на бесплатный урок
@@ -136,7 +89,7 @@ export const Section1Content = () => {
         </div>
         <section className='content agitate p-[50px] items-center flex'>
 
-            <div className="w-full flex justify-between">
+            <div className="main-description w-full flex justify-between">
                 <div className='left flex flex-col'>
                     <h1>С нами -</h1>
                     <h1>учить языки проще.</h1>

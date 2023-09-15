@@ -9,8 +9,8 @@
   padding: 20px;
   background: linear-gradient(
     to left,
-    var(--background-orange-start),
-    var(--background-orange-end)
+    rgb(var(--background-orange-start)),
+    rgb(var(--background-orange-end))
   );
   box-shadow: 1px 1px 12px 2px var(--box-shadow);
 }

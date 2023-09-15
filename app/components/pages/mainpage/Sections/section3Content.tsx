@@ -9,7 +9,11 @@ export const Section3Content = () => {
     const search = searchParams.get('showFAQ');
     const [blockToShow, setBlockToShow] = useState<'about' | 'guarantees' | 'graduates' | string | null>(search);
 
-    return <section id="section-3" className='content flex flex-col text-center p-[50px] pb-0 faq'>
+    const switchBlockToShow = (blockName = '') => {
+        setBlockToShow(blockName === blockToShow ? null : blockName);
+    }
+
+    return <section id="section-3" className='content faq flex flex-col text-center p-[50px] pb-0 faq'>
         <div className="faq-header flex m-[25px] flex-col justify-center">
             <h1 className="m-[25px]">Ответы на часто задаваемые вопросы</h1>
             <h3>Не нашли ответ на интересующий Вас вопрос? Задайте его в наших социальных сетях:</h3>
@@ -36,7 +40,7 @@ export const Section3Content = () => {
         </div>
         <div className="faq-questions flex flex-col gap-y-6 m-[35px] mt-5">
             <div className={`faq-element ${blockToShow === 'about' ? 'show' : 'hide'}`}>
-                <div className='faq-question' onClick={() => setBlockToShow('about')}>
+                <div className='faq-question' onClick={() => switchBlockToShow('about')}>
                     <div className="switcher"></div>
                     <h4>О школе:</h4>
                 </div>
@@ -48,7 +52,7 @@ export const Section3Content = () => {
             </div>
 
             <div className={`faq-element ${blockToShow === 'guarantees' ? 'show' : 'hide'}`}>
-                <div className='faq-question' onClick={() => setBlockToShow('guarantees')}>
+                <div className='faq-question' onClick={() => switchBlockToShow('guarantees')}>
                     <div className="switcher"></div>
                     <h4>Гарантии:</h4>
                 </div>
@@ -60,7 +64,7 @@ export const Section3Content = () => {
             </div>
 
             <div className={`faq-element ${blockToShow === 'graduates' ? 'show' : 'hide'}`}>
-                <div className='faq-question' onClick={() => setBlockToShow('graduates')}>
+                <div className='faq-question' onClick={() => switchBlockToShow('graduates')}>
                     <div className="switcher"></div>
                     <h4>Что получат наши выпускники?</h4>
                 </div>

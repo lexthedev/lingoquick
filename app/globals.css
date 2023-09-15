@@ -13,8 +13,8 @@ html {
   --box-shadow: #6c4800;
   /* --text-shadow: #6c480010; */
   --text-shadow: rgb(108 72 0 / 6%);
-  --background-orange-start: #fead0d;
-  --background-orange-end: #feb62c;
+  --background-orange-start: 254, 173, 13;
+  --background-orange-end: 254, 182, 44;
 
   --white-background: #ffffff;
   --black-background: #000000;

@@ -1,5 +1,4 @@
 .Scroll-up-btn {
-  position: sticky;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -9,14 +8,6 @@
   pointer-events: none;
   background: #bb5a0040;
   position: fixed;
-  /* width: 60px;
-  height: 60px;
-  bottom: 40px;
-  right: 40px;
-  background-color: #0c9;
-  color: #fff;
-  border-radius: 50px;
-  text-align: center; */
   box-shadow: 2px 2px 3px #999;
   z-index: 2;
   cursor: pointer;
@@ -50,4 +41,25 @@
 
 .Scroll-up-btn.show:hover {
   opacity: 1;
+}
+
+@media screen and (max-width: 750px) {
+  .Scroll-up-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .Scroll-up-btn::after,
+  .Scroll-up-btn::before {
+    width: 13px;
+    top: calc(50% - 2px);
+  }
+
+  .Scroll-up-btn::after {
+    left: calc(50% - 3px);
+  }
+
+  .Scroll-up-btn::before {
+    right: calc(50% - 3px);
+  }
 }
