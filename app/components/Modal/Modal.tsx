@@ -12,7 +12,7 @@ interface ModalProps extends ModalData {
 
 const Modal = (props: ModalProps) => {
     const { headerText, text, onClose } = props;
-    return <div className="modal z-10">
+    return <div className="modal z-10000">
         <h1 className="modal-header flex justify-between gap-[30px]">
             {headerText}
         </h1>

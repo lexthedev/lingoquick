@@ -225,6 +225,10 @@ body {
   .top-links.burger-menu {
     display: grid;
   }
+
+  .modal {
+    width: calc(100% - 20px);
+  }
 }
 
 @media screen and (max-width: 630px) {

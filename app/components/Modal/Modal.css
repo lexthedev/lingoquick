@@ -15,10 +15,6 @@
   box-shadow: 1px 1px 12px 2px var(--box-shadow);
 }
 
-/* .modal-header {
-  justify-content: baseline;
-} */
-
 .close {
   position: absolute;
   cursor: pointer;
