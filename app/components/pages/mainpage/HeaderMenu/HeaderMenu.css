@@ -106,9 +106,8 @@
   padding: 5px;
   margin: -5px;
   background: linear-gradient(
-    to left,
-    rgb(var(--background-orange-start)),
-    rgb(var(--background-orange-end))
+    rgba(var(--background-start-rgb), 0.2),
+    rgba(var(--background-end-rgb), 0.2)
   );
   box-shadow: 1px 1px 12px 2px var(--box-shadow);
 }
@@ -128,7 +127,7 @@
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 1px 1px 1px 1px var(--box-shadow);
+  box-shadow: 1px 1px 1px 1px #FFFFFF50;
 }
 
 .burger-menu .menu-items {
