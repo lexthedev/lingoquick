@@ -42,7 +42,11 @@
   width: 1em;
   right: 0;
   bottom: 50%;
-  background-color: white;
+   background: linear-gradient(
+    to left,
+    rgb(var(--background-orange-start)),
+    rgb(var(--background-orange-end))
+  );
 }
 
 .close::after {

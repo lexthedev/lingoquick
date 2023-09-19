@@ -42,8 +42,17 @@
 }
 
 .request-page .request-button .navigate-button.next-button {
-  background-color: white;
+  background: linear-gradient(
+    to left,
+    rgb(var(--background-orange-start)),
+    rgb(var(--background-orange-end))
+  );
   width: 100%;
+  color: white;
+}
+
+.request-page .request-button .navigate-button.back-button {
+  color: rgb(var(--background-orange-start));
 }
 
 .request-page .request-questionnaire .request-field.error-field {
