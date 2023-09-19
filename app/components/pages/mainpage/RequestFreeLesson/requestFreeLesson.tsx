@@ -10,6 +10,7 @@ export interface StudentInfo {
     name: string;
     age: number | null;
     target: string;
+    language: string;
     parent: string;
     phone: string;
     email: string;
@@ -24,6 +25,7 @@ export const RequestFreeLesson = (props: RequestFreeLessonProps) => {
         {
             name: '',
             age: null,
+            language: '',
             target: '',
             parent: '',
             phone: '',
@@ -34,9 +36,10 @@ export const RequestFreeLesson = (props: RequestFreeLessonProps) => {
     const validate = () => {
         const errorList = new Set<string>();
         if (currentPage === 1) {
-            const { name, age, target } = studentInfo;
+            const { name, age, language, target } = studentInfo;
             if (!name) errorList.add('name');
             if (!age) errorList.add('age');
+            if (!language) errorList.add('language');
             if (!target) errorList.add('target');
         }
         if (currentPage === 2) {
@@ -72,6 +75,12 @@ export const RequestFreeLesson = (props: RequestFreeLessonProps) => {
                 <div className="request-questionnaire">
                     <input className={`request-field ${errorFields.has('name') && 'error-field'}`} type="text" placeholder="Ваше имя*" value={studentInfo.name} onChange={e => addInfo('name', e.target.value)} />
                     <input className={`request-field ${errorFields.has('age') && 'error-field'}`} type="number" placeholder="Ваш возраст*" value={studentInfo.age as number} onChange={e => addInfo('age', e.target.value)} />
+                    <select className={`request-field ${errorFields.has('target') && 'error-field'}`} placeholder="Язык обучения*" defaultValue={""} value={studentInfo.language} onChange={e => addInfo('language', e.target.value)} >
+                        <option value="" disabled >{"Язык обучения"}</option>
+                        <option value="Английский">{"Английский"}</option>
+                        <option value="Испанский">{"Испанский"}</option>
+                        <option value="Турецкий">{"Турецкий"}</option>
+                    </select>
                     <select className={`request-field ${errorFields.has('target') && 'error-field'}`} placeholder="Цель обучения*" defaultValue={""} value={studentInfo.target} onChange={e => addInfo('target', e.target.value)} >
                         <option value="" disabled >{"Цель обучения"}</option>
                         <option value="Нравится изучать языки">{"Нравится изучать языки"}</option>

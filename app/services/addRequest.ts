@@ -4,18 +4,18 @@ import googleSheets from "./googleSheets";
 
 const addRequest = async (data: StudentInfo): Promise<number> => {
 
-    const { name, age, phone, parent, email, target } = data;
+    const { name, age, phone, parent, email, language, target } = data;
     const now = new Date();
 
     const sheets = await googleSheets();
-    const dataRange = 'A:G';
+    const dataRange = 'A:H';
     const result = await sheets.spreadsheets.values.append({
         spreadsheetId: process.env.SHEET_ID,
         range: dataRange,
         valueInputOption: 'USER_ENTERED', // or 'ROW'
         requestBody: {
             values: [
-                [name, age, phone, parent, email, target, `${now.toLocaleDateString('ru-RU')} ${now.toLocaleTimeString('ru-RU')}`]
+                [name, age, phone, parent, email, language, target, `${now.toLocaleDateString('ru-RU')} ${now.toLocaleTimeString('ru-RU')}`]
             ]
         }
     })

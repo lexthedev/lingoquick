@@ -19,7 +19,7 @@ body {
 }
 
 .burger-menu,
-.navigate .top-links {
+.top-links {
   animation: 1s ease-in-out 1 appearence;
 }
 
