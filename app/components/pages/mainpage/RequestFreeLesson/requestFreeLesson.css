@@ -20,6 +20,10 @@
   cursor: pointer;
 }
 
+.request-page .request-questionnaire .request-field:focus-visible {
+  outline: none;
+}
+
 .request-page .request-button .navigate-button {
   padding: 10px;
   border-radius: 10px;
