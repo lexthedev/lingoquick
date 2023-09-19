@@ -3,8 +3,10 @@
 export const Section2Content = () => {
     return <section className='content students flex items-end'>
         <div className='float-care'>
-            <h1>С заботой о клиентах.</h1>
-            <h1>Подберём индивидуальный курс обучения для вас!</h1>
+            <h1>
+                <div>С заботой о клиентах.</div>
+                <div>Подберём индивидуальный курс обучения для вас!</div>
+            </h1>
         </div>
         <div className='bottom-promo'>
             <div className='promo-item'>

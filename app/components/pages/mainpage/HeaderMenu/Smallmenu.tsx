@@ -21,9 +21,9 @@ const SmallMenu = (props: Smallmenuprops) => {
                 <div>Lingo Quick</div>
             </a>
         </div>
-        <div className="menu-items">
+        <nav className="menu-items">
             {children}
-        </div>
+        </nav>
 
     </div>
 }

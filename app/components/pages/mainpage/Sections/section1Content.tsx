@@ -91,9 +91,11 @@ export const Section1Content = () => {
 
             <div className="main-description w-full flex justify-between">
                 <div className='left flex flex-col'>
-                    <h1>С нами -</h1>
-                    <h1>учить языки проще.</h1>
-                    <h1>Начните и Вы!</h1>
+                    <h1>
+                        <div>С нами -</div>
+                        <div>учить языки проще.</div>
+                        <div>Начните и Вы!</div>
+                    </h1>
                     <p>Онлайн-школа, которая нравится Вашим детям</p>
                 </div>
                 <div className="right order mt-[auto]">

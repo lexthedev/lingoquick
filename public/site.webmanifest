@@ -1,0 +1,20 @@
+{
+    "name": "Lingo Quick",
+    "short_name": "Lingo Quick",
+    "description": "Онлайн консультации по иностранным языкам. Изучение языков для школьников и родителей.",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#21201e",
+    "background_color": "#21201e",
+    "display": "standalone"
+}

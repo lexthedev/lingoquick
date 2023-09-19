@@ -16,12 +16,12 @@ const HeaderMenu = () => {
     </>
 
     return <div className="navigate">
-        <div className={"top-links wide-menu left flex gap-10 "}>
+        <nav className={"top-links wide-menu left flex gap-10 "}>
             <a href="/">
                 <div>Lingo Quick</div>
             </a>
             {MenuItems}
-        </div>
+        </nav>
         <SmallMenu>
             {MenuItems}
         </SmallMenu>
