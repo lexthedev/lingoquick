@@ -79,29 +79,31 @@ export const Section1Content = () => {
             onClose={() => setModalData(undefined)}
             {...modalData}
         />}
-        <div className="header w-full flex no-wrap justify-between p-10">
-            <HeaderMenu />
-            <div className='top-links right flex flex-end'>
-                <a href="/" onClick={e => onClickShowInfo(e, 'request')}>
-                    Запись на бесплатный урок
-                </a>
-            </div>
-        </div>
-        <section className='content agitate p-[50px] items-center flex'>
-
-            <div className="main-description w-full flex justify-between">
-                <div className='left flex flex-col'>
-                    <h1>
-                        <div>С нами -</div>
-                        <div>учить языки проще.</div>
-                        <div>Начните и Вы!</div>
-                    </h1>
-                    <p>Онлайн-школа, которая нравится Вашим детям</p>
+        <section className='content agitate'>
+            <div className="header w-full flex no-wrap justify-between p-10">
+                <HeaderMenu />
+                <div className='top-links right flex flex-end'>
+                    <a href="/" onClick={e => onClickShowInfo(e, 'request')}>
+                        Запись на бесплатный урок
+                    </a>
                 </div>
-                <div className="right order mt-[auto]">
-                    <a href="/"><h1>
-                        <WaveTextAnimator text={'Оставить заявку'} onClick={e => onClickShowInfo(e, 'request')} />
-                    </h1></a>
+            </div>
+
+            <div className="main-section-content p-[50px] items-center flex">
+                <div className="main-description w-full flex justify-between">
+                    <div className='left flex flex-col'>
+                        <h1>
+                            <div>С нами -</div>
+                            <div>учить языки проще.</div>
+                            <div>Начните и Вы!</div>
+                        </h1>
+                        <p>Онлайн-школа, которая нравится Вашим детям</p>
+                    </div>
+                    <div className="right order mt-[auto]">
+                        <a href="/"><h1>
+                            <WaveTextAnimator text={'Оставить заявку'} onClick={e => onClickShowInfo(e, 'request')} />
+                        </h1></a>
+                    </div>
                 </div>
             </div>
         </section>
