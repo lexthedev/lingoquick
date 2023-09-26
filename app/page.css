@@ -233,6 +233,7 @@ span.protectedNumber:before {
   border-radius: 10px;
   opacity: 0;
   z-index: 20;
+  color: white;
   background: rgb(var(--icon-background));
   animation: hide 1 2s;
 }
