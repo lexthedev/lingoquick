@@ -80,7 +80,7 @@ export const Section1Content = () => {
             {...modalData}
         />}
         <section className='content agitate'>
-            <div className="header w-full flex no-wrap justify-between p-10">
+            <div className="header w-full flex no-wrap justify-between">
                 <HeaderMenu />
                 <div className='top-links right flex flex-end'>
                     <a href="/" onClick={e => onClickShowInfo(e, 'request')}>
