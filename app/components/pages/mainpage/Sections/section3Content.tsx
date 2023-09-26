@@ -2,16 +2,53 @@
 import RainbowTextAnimator from "@/app/components/RainBowText/RainbowTextAnimator";
 import { useSearchParams } from 'next/navigation';
 import Image from "next/image";
-import { useState } from "react";
+import { MouseEvent, useRef, useState } from "react";
 
 export const Section3Content = () => {
     const searchParams = useSearchParams();
     const search = searchParams.get('showFAQ');
     const [blockToShow, setBlockToShow] = useState<'about' | 'guarantees' | 'graduates' | string | null>(search);
+    const phoneLink = useRef<HTMLAnchorElement>(null);
+    const phone = process.env.NEXT_PUBLIC_CONTACT_PHONE || '';
 
     const switchBlockToShow = (blockName = '') => {
         setBlockToShow(blockName === blockToShow ? null : blockName);
+    };
+
+    const handleCallMe = (event: MouseEvent) => {
+        event.preventDefault();
+        const link = phoneLink.current;
+        if (link) {
+            link.href = `tel:${phone}`;
+            link.click();
+            link.href = '';
+        }
+    };
+
+    const handleCopyPhone = (e: MouseEvent) => {
+        const link = phoneLink.current;
+        if (link) {
+            const copytarget = link.parentElement
+            copytarget?.classList.remove('copied');
+            navigator.clipboard.writeText(phone);
+            checkIfTextCopied(phone, copytarget);
+        }
     }
+
+    const checkIfTextCopied = async (text: string, target: HTMLElement | null) => {
+        if (text === await navigator.clipboard.readText()) {
+            target?.classList.add('copied');
+        }
+    };
+
+    const phoneToHumanReadable = () => {
+        if (!!phone) {
+            const readablePhone = `${phone.slice(0, 2)} (${phone.slice(2, 5)}) ${phone.slice(5, 8)} -${phone.slice(8, 10)} -${phone.slice(10, 12)}`
+            return readablePhone; // "+7 (999) 999-99-99"}
+        } else {
+            return '';
+        }
+    };
 
     return <section id="section-3" className='content faq flex flex-col text-center p-[50px] pb-0 faq'>
         <div className="faq-header flex m-[25px] flex-col justify-center">
@@ -20,7 +57,7 @@ export const Section3Content = () => {
             <div className="flex justify-center gap-x-3 mt-5">
                 <a href="https://t.me/LingoQuick">
                     <Image
-                        src="/telegram.svg"
+                        src="/icons/telegram.svg"
                         alt="telegram Logo"
                         className="dark:invert"
                         width={30}
@@ -29,7 +66,7 @@ export const Section3Content = () => {
                     /></a>
                 <a href="https://wa.me/79959896416">
                     <Image
-                        src="/whatsapp.svg"
+                        src="/icons/whatsapp.svg"
                         alt="whatsapp Logo"
                         className="dark:invert"
                         width={30}
@@ -39,7 +76,7 @@ export const Section3Content = () => {
             </div>
         </div>
         <div className="faq-questions text-left flex flex-col gap-y-6 m-[35px] mt-5">
-            <div className={`faq-element ${blockToShow === 'about' ? 'show' : 'hide'}`}>
+            <div className={`faq-element ${blockToShow === 'about' ? 'show' : 'hide'} `}>
                 <div className='faq-question' onClick={() => switchBlockToShow('about')}>
                     <div className="switcher"></div>
                     <h4>О школе:</h4>
@@ -51,7 +88,7 @@ export const Section3Content = () => {
                 </div>
             </div>
 
-            <div className={`faq-element ${blockToShow === 'guarantees' ? 'show' : 'hide'}`}>
+            <div className={`faq-element ${blockToShow === 'guarantees' ? 'show' : 'hide'} `}>
                 <div className='faq-question' onClick={() => switchBlockToShow('guarantees')}>
                     <div className="switcher"></div>
                     <h4>Гарантии:</h4>
@@ -66,17 +103,33 @@ export const Section3Content = () => {
                 </div>
             </div>
 
-            <div className={`faq-element ${blockToShow === 'graduates' ? 'show' : 'hide'}`}>
+            <div className={`faq-element ${blockToShow === 'graduates' ? 'show' : 'hide'} `}>
                 <div className='faq-question' onClick={() => switchBlockToShow('graduates')}>
                     <div className="switcher"></div>
                     <h4>Что получат наши выпускники?</h4>
                 </div>
                 <div className='faq-answer'>
                     <p>Lingo Quick поможет понять и полюбить иностранный язык.</p>
-                    <p>Повысит успеваемость в школе и сделает изучение разговорной части  языка увлекательным! </p>
+                    <p>Повысит успеваемость в школе и сделает изучение разговорной части  языка увлекательным!</p>
                 </div>
             </div>
         </div>
+
+        <div className="phone-number">
+            <a onClick={handleCallMe} href="/"><span className="protectedNumber" data-pn={phoneToHumanReadable()} title="Нажмите для звонка"></span></a>
+            <Image
+                src="/icons/copy.svg"
+                alt="Копировать"
+                title="Копировать"
+                className="dark:invert"
+                width={16}
+                height={16}
+                priority
+                onClick={handleCopyPhone}
+            />
+            <a ref={phoneLink}></a>
+        </div>
+
         <div className="footer">
             <p>Языковые онлайн консультации &quot;Lingo Quick&quot; (линго куик) </p>
             <div className="small-text">

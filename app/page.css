@@ -19,6 +19,18 @@ body {
   }
 }
 
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .burger-menu,
 .top-links {
   animation: 1s ease-in-out 1 appearence;
@@ -199,6 +211,30 @@ body {
 .footer {
   margin-top: auto;
   text-align: center;
+}
+
+.phone-number {
+  display: flex;
+  justify-content: center;
+  column-gap: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+span.protectedNumber:before {
+  content: "Позвоните нам: " attr(data-pn);
+}
+
+.copied::after {
+  content: "Скопировано!";
+  position: absolute;
+  top: calc(100% + 10px);
+  padding: 10px;
+  border-radius: 10px;
+  opacity: 0;
+  z-index: 20;
+  background: rgb(var(--icon-background));
+  animation: hide 1 2s;
 }
 
 @media screen and (min-width: 1270px) {
