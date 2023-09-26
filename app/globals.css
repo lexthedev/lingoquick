@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -19,6 +19,8 @@ html {
   --white-background: #ffffff;
   --black-background: #000000;
   --invert-font-color: 0, 0, 0;
+
+  --icon-background: 33, 32, 30;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,4 +49,23 @@ body {
 h1 {
   font-size: xx-large;
   font-weight: bold;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+ul {
+  display: block;
+  list-style: inherit;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
 }

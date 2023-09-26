@@ -4,17 +4,30 @@ body {
 }
 
 .header {
-  position: absolute;
-  top: 0;
-  z-index: 2;
+  background: rgb(var(--icon-background));
+  min-height: 3em;
+  padding: 13px 50px;
 }
 
 @keyframes appearence {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
@@ -29,6 +42,11 @@ body {
 
 .agitate {
   position: relative;
+}
+
+.main-section-content {
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     to left,
     rgb(var(--background-orange-start)),
@@ -38,6 +56,18 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.main-section-content .request-free-lesson-button {
+  padding: 10px;
+  box-shadow: 1px 1px 12px 2px var(--box-shadow);
+  background: rgba(var(--icon-background), 0.9);
+  border-radius: 10px;
+}
+
+.main-section-content .request-free-lesson-button:hover {
+  box-shadow: 1px 1px 12px 2px var(--box-shadow);
+  background: rgb(var(--icon-background));
 }
 
 .students {
@@ -183,9 +213,41 @@ body {
   text-align: center;
 }
 
+.phone-number {
+  display: flex;
+  justify-content: center;
+  column-gap: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+span.protectedNumber:before {
+  content: "Позвоните нам: " attr(data-pn);
+}
+
+.copied::after {
+  content: "Скопировано!";
+  position: absolute;
+  top: calc(100% + 10px);
+  padding: 10px;
+  border-radius: 10px;
+  opacity: 0;
+  z-index: 20;
+  color: white;
+  box-shadow: 1px 1px 12px 2px var(--box-shadow);
+  background: rgb(var(--icon-background));
+  animation: hide 1 2s;
+}
+
+@media screen and (min-width: 1270px) {
+  .main-description {
+    font-size: 24px;
+  }
+}
+
 @media screen and (max-width: 840px) {
   .header,
-  section.content.agitate {
+  section.content.agitate .main-section-content {
     padding: 10px;
   }
 
@@ -224,6 +286,7 @@ body {
 
   .top-links.burger-menu {
     display: grid;
+    position: absolute;
   }
 
   .modal {
@@ -249,8 +312,13 @@ body {
     display: none;
   }
 
-  .wave-text {
+  /* .wave-text {
     margin: 0 auto;
+  } */
+
+  .main-section-content .request-free-lesson-button {
+    max-width: fit-content;
+    margin: 10px auto;
   }
 
   .bottom-promo,

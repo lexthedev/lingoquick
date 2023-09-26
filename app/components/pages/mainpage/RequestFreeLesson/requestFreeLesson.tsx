@@ -81,7 +81,14 @@ export const RequestFreeLesson = (props: RequestFreeLessonProps) => {
                         <option value="Испанский">{"Испанский"}</option>
                         <option value="Турецкий">{"Турецкий"}</option>
                     </select>
-                    <select className={`request-field ${errorFields.has('target') && 'error-field'}`} placeholder="Цель обучения*" defaultValue={""} value={studentInfo.target} onChange={e => addInfo('target', e.target.value)} >
+                    <input
+                        className={`request-field ${errorFields.has('target') && 'error-field'}`}
+                        placeholder="Цель обучения*"
+                        defaultValue={""}
+                        value={studentInfo.target}
+                        list="target_list"
+                        onChange={e => addInfo('target', e.target.value)} />
+                    <datalist id="target_list">
                         <option value="" disabled >{"Цель обучения"}</option>
                         <option value="Нравится изучать языки">{"Нравится изучать языки"}</option>
                         <option value="Подготовка к огэ">{"Подготовка к огэ"}</option>
@@ -89,7 +96,7 @@ export const RequestFreeLesson = (props: RequestFreeLessonProps) => {
                         <option value="Повысить успеваемость учащегося">{"Повысить успеваемость учащегося"}</option>
                         <option value="Для путешествий">{"Для путешествий"}</option>
                         <option value="Преодолеть языковой барьер">{"Преодолеть языковой барьер"}</option>
-                    </select>
+                    </datalist>
                 </div>
                 <div className="request-button">
                     <input className="navigate-button next-button" type="button" value="Далее →" onClick={() => handleClick(() => setCurrentPage(2))} />
