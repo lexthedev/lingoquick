@@ -19,6 +19,8 @@ html {
   --white-background: #ffffff;
   --black-background: #000000;
   --invert-font-color: 0, 0, 0;
+
+  --icon-background: 33, 32, 30;
 }
 
 @media (prefers-color-scheme: dark) {

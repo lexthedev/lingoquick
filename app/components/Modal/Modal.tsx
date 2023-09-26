@@ -21,7 +21,7 @@ const Modal = (props: ModalProps) => {
             document.body.style.overflow = "auto"
         }
     })
-    return <div className="modal-wrapper">
+    return <div className="modal-wrapper" onClick={() => onClose()}>
         <div className="modal">
             <h1 className="modal-header flex justify-between gap-[30px]">
                 {headerText}
