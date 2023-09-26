@@ -6,7 +6,7 @@ body {
 .header {
   background: rgb(var(--icon-background));
   min-height: 3em;
-  padding: 10px 50px;
+  padding: 13px 50px;
 }
 
 @keyframes appearence {
