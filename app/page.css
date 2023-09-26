@@ -234,6 +234,7 @@ span.protectedNumber:before {
   opacity: 0;
   z-index: 20;
   color: white;
+  box-shadow: 1px 1px 12px 2px var(--box-shadow);
   background: rgb(var(--icon-background));
   animation: hide 1 2s;
 }
