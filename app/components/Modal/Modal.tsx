@@ -22,15 +22,15 @@ const Modal = (props: ModalProps) => {
         }
     })
 
-    // const handleClose = (e: MouseEvent) => {
-    //     e.stopPropagation();
-    //     if (!e.currentTarget.classList.contains('modal')) { onClose() }
-    // }
+    const handleClose = (e: MouseEvent) => {
+        e.stopPropagation();
+        if (!e.currentTarget.classList.contains('modal')) { onClose() }
+    }
 
     return <div className="modal-wrapper"
-    // onClick={handleClose}
+        onClick={handleClose}
     >
-        <div className="modal">
+        <div className="modal" onClick={handleClose}>
             <h1 className="modal-header flex justify-between gap-[30px]">
                 {headerText}
             </h1>
