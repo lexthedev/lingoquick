@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode, useLayoutEffect } from "react";
+import { MouseEvent, ReactNode, useLayoutEffect } from "react";
 import '../Modal/Modal.css';
 
 export interface ModalData {
@@ -21,7 +21,15 @@ const Modal = (props: ModalProps) => {
             document.body.style.overflow = "auto"
         }
     })
-    return <div className="modal-wrapper" onClick={() => onClose()}>
+
+    // const handleClose = (e: MouseEvent) => {
+    //     e.stopPropagation();
+    //     if (!e.currentTarget.classList.contains('modal')) { onClose() }
+    // }
+
+    return <div className="modal-wrapper"
+    // onClick={handleClose}
+    >
         <div className="modal">
             <h1 className="modal-header flex justify-between gap-[30px]">
                 {headerText}

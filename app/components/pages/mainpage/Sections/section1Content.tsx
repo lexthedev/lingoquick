@@ -100,7 +100,7 @@ export const Section1Content = () => {
                         <p>Онлайн-школа, которая нравится Вашим детям</p>
                     </div>
                     <div className="right request-free-lesson-button order mt-[auto]">
-                        <a href="/"><h1>
+                        <a href="/" onClick={e => onClickShowInfo(e, 'request')}><h1>
                             {/* <WaveTextAnimator text={'Оставить заявку'} onClick={e => onClickShowInfo(e, 'request')} /> */}
                             <span>Оставить заявку</span>
                         </h1></a>
