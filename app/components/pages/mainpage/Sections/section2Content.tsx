@@ -1,34 +1,37 @@
 "use client";
 
 export const Section2Content = () => {
-    return <section className='content students flex items-end'>
-        <div className='float-care'>
-            <h1>
-                <div>С заботой о клиентах.</div>
-                <div>Подберём индивидуальный курс обучения для вас!</div>
-            </h1>
+    return <section className='content courses'>
+        <div className="courses-title">
+            <h1>Возможность выбрать курс для обучения</h1>
+            <h2>
+                <span>Многозадачность современного мира требует специализированного обучения по разным программам.</span>
+                <br />
+                <span>Вы можете выбрать индивидуальный курс обучения.</span>
+            </h2>
         </div>
-        <div className='bottom-promo'>
-            <div className='promo-item'>
-                <div>
-                    <h2>Английский для школы</h2>
-                    <p>2-11 классы</p>
+        <div className="target-list">
+            <div className="target-wrapper">
+                <div className="target">
+                    <h2><b>Английский для школы</b></h2>
+                    <p>Повысим успеваемость ученика в школе и привьем любовь
+                        к английскому языку
+                    </p>
                 </div>
-                <img src="/img/books.webp" alt="books" />
             </div>
-            <div className='promo-item'>
-                <div>
-                    <h2>Английский для путешествий</h2>
-                    <p>Изучим диалект и базовые фразы для путешествий</p>
+            <div className="target-wrapper">
+                <div className="target">
+                    <h2><b>Английский для  экзаменов</b></h2>
+                    <p>Поможем ученику подготовиться
+                        к контрольной, ВПР или ОГЭ по английскому языку</p>
                 </div>
-                <img src="/img/ticketpng.png" alt="books" />
             </div>
-            <div className='promo-item'>
-                <div>
-                    <h2>Экзамены по английскому</h2>
-                    <p>Подготовим к контрольной, ВПР или ОГЭ</p>
+            <div className="target-wrapper">
+                <div className="target">
+                    <h2><b>Английский для путешествий</b></h2>
+                    <p>Поможем ученику изучить
+                        английский язык и диалекты для поездок за границу</p>
                 </div>
-                <img src="/img/checklist.webp" alt="books" />
             </div>
         </div>
     </section>
