@@ -50,6 +50,8 @@ export default function RootLayout({
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#21201e" />
         <meta name="msapplication-TileColor" content="#21201e" />
         <meta name="theme-color" content="#21201e" />
+        <link href="https://fonts.cdnfonts.com/css/montserrat-alternates" rel="stylesheet" />
+        <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

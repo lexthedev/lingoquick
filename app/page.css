@@ -1,12 +1,19 @@
 body {
   color: #ffffff;
-  font-weight: bolder;
+  /* font-weight: bolder; */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .header {
   background: rgb(var(--icon-background));
   min-height: 3em;
   padding: 13px 50px;
+  flex: 0 1 auto;
 }
 
 @keyframes appearence {
@@ -42,6 +49,8 @@ body {
 
 .agitate {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-section-content {
@@ -52,6 +61,7 @@ body {
     rgb(var(--background-orange-start)),
     rgb(var(--background-orange-end))
   );
+  flex: 1 1 auto;
   background-image: url("/img/girl-stupid.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -70,7 +80,7 @@ body {
   background: rgb(var(--icon-background));
 }
 
-.students {
+/* .students {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -90,6 +100,87 @@ body {
 .students .float-care {
   width: 30%;
   align-self: normal;
+} */
+
+.courses {
+  background: #ffac00;
+  color: black;
+  margin: 0 0 0 0;
+  padding: 50px 50px 0 50px;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+
+.courses .courses-title {
+  flex: 0 1 auto;
+}
+
+.courses .courses-title h1 {
+  /* font-size: 70px; */
+  font-size: calc(1.5vw + 2vh + 2vmin);
+  color: linear-gradient(to bottom rgba(29, 30, 0, 0.53), black);
+}
+
+.courses .courses-title h2 {
+  /* font-size: 47px; */
+  font-size: calc(0.2vw + 0.1vh + 4vmin);
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.courses .target-list {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
+.courses .target-list .target {
+  background: linear-gradient(
+    rgba(255, 252, 227, 0.56),
+    rgba(255, 229, 0, 0.56)
+  );
+  border-radius: 30px;
+  /* font-size: 36px; */
+  font-size: calc(0.1vw + 0.05vh + 2vmin);
+  /* font-size: 1.8vi + 1.3vb; */
+  font-weight: 500;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+}
+.courses .target-list .target h2 {
+  /* font-size: 47px; */
+  font-size: calc(0.2vw + 0.1vh + 4vmin);
+}
+
+.courses .target-list .target-wrapper {
+  padding: 20px 0 0 0;
+  transition: padding ease-in-out 0.2s;
+  max-width: 700px;
+  min-width: 316px;
+}
+
+.courses .target-list .target-wrapper:hover {
+  padding: 0 0 0 0;
+}
+
+.courses .target-list .target-wrapper:nth-child(1) .target {
+  background: bottom / calc(100% + 10px) no-repeat
+      url("/img/card-bg/open-book.svg"),
+    linear-gradient(rgba(255, 252, 227, 0.56), rgba(255, 229, 0, 0.56));
+}
+
+.courses .target-list .target-wrapper:nth-child(2) .target {
+  background: bottom / calc(100% - 10%) no-repeat url("/img/card-bg/to-do.svg"),
+    linear-gradient(rgba(255, 252, 227, 0.56), rgba(255, 229, 0, 0.56));
+}
+
+.courses .target-list .target-wrapper:nth-child(3) .target {
+  background: bottom / calc(100% + 2px) no-repeat url("/img/card-bg/globe.svg"),
+    linear-gradient(rgba(255, 252, 227, 0.56), rgba(255, 229, 0, 0.56));
 }
 
 .bottom-promo {
@@ -243,6 +334,21 @@ span.protectedNumber:before {
   .main-description {
     font-size: 24px;
   }
+
+  /* .courses .target-list {
+    flex-wrap: wrap;
+    /* max-height: 100%;
+  } */
+}
+
+@media screen and (max-width: 1090px) {
+  .courses .target-list {
+    overflow: auto;
+    justify-content: unset;
+  }
+  .courses .target-list .target-wrapper:hover {
+    padding-top: 20px;
+  }
 }
 
 @media screen and (max-width: 840px) {
@@ -251,10 +357,14 @@ span.protectedNumber:before {
     padding: 10px;
   }
 
-  section.content.students .float-care {
+  .courses {
+    padding: 10px;
+  }
+
+  /* section.content.students .float-care {
     width: 100%;
     text-align: center;
-  }
+  } */
 
   section.content.faq {
     padding: 10px;
@@ -319,6 +429,10 @@ span.protectedNumber:before {
   .main-section-content .request-free-lesson-button {
     max-width: fit-content;
     margin: 10px auto;
+  }
+
+  .courses .target-list .target-wrapper .target {
+    font-size: calc(0.2vw + 0.1vh + 4vmin);
   }
 
   .bottom-promo,
