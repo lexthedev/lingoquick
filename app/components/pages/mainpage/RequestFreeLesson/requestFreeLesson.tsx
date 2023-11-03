@@ -4,6 +4,7 @@ import './requestFreeLesson.css';
 
 interface RequestFreeLessonProps {
     onAddRequest: (data: StudentInfo) => void;
+    target: string | null;
 }
 
 export interface StudentInfo {
@@ -18,7 +19,7 @@ export interface StudentInfo {
 
 export const RequestFreeLesson = (props: RequestFreeLessonProps) => {
 
-    const { onAddRequest } = props;
+    const { onAddRequest, target } = props;
     const [currentPage, setCurrentPage] = useState(1);
     const [errorFields, serErrorFields] = useState<Set<string>>(new Set());
     const [studentInfo, setStudentInfo] = useState<StudentInfo>(
@@ -26,7 +27,7 @@ export const RequestFreeLesson = (props: RequestFreeLessonProps) => {
             name: '',
             age: null,
             language: '',
-            target: '',
+            target: target ? target : '',
             parent: '',
             phone: '',
             email: ''
@@ -84,7 +85,7 @@ export const RequestFreeLesson = (props: RequestFreeLessonProps) => {
                     <input
                         className={`request-field ${errorFields.has('target') && 'error-field'}`}
                         placeholder="Цель обучения*"
-                        defaultValue={""}
+                        // defaultValue={target}
                         value={studentInfo.target}
                         list="target_list"
                         onChange={e => addInfo('target', e.target.value)} />

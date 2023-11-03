@@ -4,7 +4,6 @@ import ScrollUp from './components/ScrollUp/ScrollUp'
 import './page.css'
 
 export default async function Home() {
-
   return (
     <main>
       <ScrollUp />

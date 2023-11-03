@@ -1,15 +1,18 @@
 "use client";
 import { RequestFreeLesson, StudentInfo } from "../RequestFreeLesson/requestFreeLesson";
 import { ModalData } from "@/app/components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "@/app/components/Modal/Modal";
 import addRequest from "@/app/services/addRequest";
 import WaveTextAnimator from "@/app/components/WaveText/WaveTextAnimator";
 import HeaderMenu from "../HeaderMenu/HeaderMenu";
+import { useSearchParams } from "next/navigation";
 
 export const Section1Content = () => {
     // const { sheets } = props;
     const [modalData, setModalData] = useState<ModalData>();
+    const searchParams = useSearchParams();
+    const targetFromSearch = searchParams.get('target');
     const requestSubmit = async (data: StudentInfo) => {
         showInfo('wait');
         const status = await addRequest(data);
@@ -26,7 +29,7 @@ export const Section1Content = () => {
             case 'request':
                 data = {
                     headerText: 'Сделай первый шаг к изучению языков с Lingo Quick',
-                    text: <RequestFreeLesson onAddRequest={(data) => requestSubmit(data)} />
+                    text: <RequestFreeLesson target={targetFromSearch} onAddRequest={(data) => requestSubmit(data)} />
                 }
                 break;
 
@@ -61,18 +64,21 @@ export const Section1Content = () => {
                 // }
                 data = {
                     headerText: 'Сделай первый шаг к изучению языков с Lingo Quick',
-                    text: <RequestFreeLesson onAddRequest={(data) => requestSubmit(data)} />
+                    text: <RequestFreeLesson target={targetFromSearch} onAddRequest={(data) => requestSubmit(data)} />
                 }
                 break;
         }
         setModalData(data);
     }
 
+    useEffect(() => {
+        if (!!targetFromSearch) showInfo('request');
+    }, [targetFromSearch])
+
     const onClickShowInfo = (event: React.MouseEvent<Element, MouseEvent>, header = '') => {
         event.preventDefault();
         showInfo(header);
     }
-
 
     return <>
         {modalData && <Modal
