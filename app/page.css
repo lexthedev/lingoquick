@@ -44,7 +44,7 @@ body::-webkit-scrollbar {
 }
 
 .content {
-  height: 100vh;
+  height: calc(100vh - max(10px, 5vh));
 }
 
 .agitate {
