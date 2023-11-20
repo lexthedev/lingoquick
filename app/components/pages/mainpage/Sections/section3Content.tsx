@@ -133,6 +133,9 @@ export const Section3Content = () => {
         <div className="footer">
             <p>Языковые онлайн консультации &quot;Lingo Quick&quot; (линго куик) </p>
             <div className="small-text">
+                <p>ИП Ткачев Григорий Алексеевич (ОГРН 323619600245414)</p>
+            </div>
+            <div className="small-text">
                 <span>made by great and mighty </span>
                 <a href="mailto:lex.dev@aol.com?subject=mail about Lingo Quick">
                     <RainbowTextAnimator text='lexthedev' />
