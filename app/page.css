@@ -134,6 +134,7 @@ body::-webkit-scrollbar {
   flex-direction: row;
   gap: 20px;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 .courses .target-list .target {
