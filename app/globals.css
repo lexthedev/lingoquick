@@ -22,6 +22,9 @@ html {
   --invert-font-color: 0, 0, 0;
 
   --icon-background: 33, 32, 30;
+
+  --grey-background: 255, 252, 227;
+  --yellow-background: 255, 229, 0;
 }
 
 @media (prefers-color-scheme: dark) {

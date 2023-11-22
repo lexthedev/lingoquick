@@ -1,5 +1,5 @@
 // import Image from 'next/image'
-import { Section1Content, Section2Content, Section3Content } from './components'
+import { Section1Content, Section2Content, Section3Content, Section4Content } from './components'
 import ScrollUp from './components/ScrollUp/ScrollUp'
 import './page.css'
 
@@ -10,6 +10,7 @@ export default async function Home() {
       <Section1Content />
       <Section2Content />
       <Section3Content />
+      <Section4Content />
     </main>
   )
 }

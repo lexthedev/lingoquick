@@ -139,8 +139,8 @@ body::-webkit-scrollbar {
 
 .courses .target-list .target {
   background: linear-gradient(
-    rgba(255, 252, 227, 0.56),
-    rgba(255, 229, 0, 0.56)
+    rgba(var(--grey-background), 0.56),
+    rgba(var(--yellow-background), 0.56)
   );
   border-radius: 30px;
   /* font-size: 36px; */
@@ -221,7 +221,133 @@ body::-webkit-scrollbar {
     1px -1px var(--text-shadow), -1px 1px var(--text-shadow);
 }
 
-#section-3 {
+.tg {
+  background: rgba(223, 240, 255, 1);
+  display: flex;
+  align-items: center;
+}
+
+.tg-content {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding: 20px;
+  z-index: 22;
+}
+
+.tg-content .pic {
+  width: 50%;
+  height: unset;
+  z-index: 2;
+}
+
+@keyframes ball1 {
+  0% {
+    opacity: 0.5;
+    left: 0px;
+    top: -20px;
+    width: calc(100vh / 5);
+    height: calc(100vh / 5);
+  }
+
+  50% {
+    opacity: 0.9;
+    left: 40%;
+    top: 100%;
+  }
+
+  100% {
+    opacity: 1;
+    width: calc(100vh / 3);
+    height: calc(100vh / 3);
+    left: calc(100% - calc(100vh / 3 - 20px));
+    top: -40px;
+    /* background-color: #0fac00; */
+  }
+}
+
+.tg-content::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: calc(100vh / 5);
+  height: calc(100vh / 5);
+  border-radius: 50%;
+  background-color: #ffac00;
+
+  z-index: 1;
+  /* */
+  width: calc(100vh / 3);
+  height: calc(100vh / 3);
+  left: calc(100% - calc(100vh / 3 - 20px));
+  /* left: calc(100% - calc(100vh / 3)); */
+  top: -40px;
+  /* */
+  animation: 6s ease-in-out 1 ball1;
+}
+
+@keyframes ball2 {
+  0% {
+    opacity: 0.5;
+    left: 50%;
+    top: 50%;
+    width: calc(100vh / 5);
+    height: calc(100vh / 5);
+  }
+
+  50% {
+    opacity: 0.9;
+    left: 40%;
+    top: -30%;
+  }
+
+  100% {
+    opacity: 1;
+    width: calc(100vh / 8);
+    height: calc(100vh / 8);
+    left: 0;
+    top: calc(-70%);
+  }
+}
+
+.tg-content::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: calc(100vh / 5);
+  height: calc(100vh / 5);
+  border-radius: 50%;
+  background-color: #ffac00;
+
+  z-index: 1;
+  /* */
+  width: calc(100vh / 8);
+  height: calc(100vh / 8);
+  left: 0;
+  top: calc(-70%);
+  /* */
+  animation: 6s ease-in-out 1 ball2;
+}
+
+.tg-info-wrap {
+  background-color: rgb(var(--invert-font-color));
+  color: rgb(var(--background-end-rgb));
+  width: 520px;
+  padding: 30px;
+  border-radius: 57px;
+  z-index: 2;
+}
+
+.tg-link {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(var(--yellow-background));
+  padding: 13px;
+  border-radius: 24px;
+}
+
+#faq {
   color: rgb(var(--invert-font-color));
 }
 

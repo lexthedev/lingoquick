@@ -4,13 +4,13 @@ import SmallMenu from "./Smallmenu";
 const HeaderMenu = () => {
 
     const MenuItems = <>
-        <a href="?showFAQ=about#section-3" >
+        <a href="?showFAQ=about#faq" >
             О школе
         </a>
-        <a href="?showFAQ=guarantees#section-3" >
+        <a href="?showFAQ=guarantees#faq" >
             Гарантии
         </a>
-        <a href="?showFAQ=graduates#section-3" >
+        <a href="?showFAQ=graduates#faq" >
             Что Вы получите
         </a>
     </>
