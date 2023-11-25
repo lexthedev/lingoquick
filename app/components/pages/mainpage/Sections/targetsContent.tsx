@@ -1,6 +1,6 @@
 "use client";
 
-export const Section3Content = () => {
+export const TargetsContent = () => {
     return <section className='content courses'>
         <div className="courses-title">
             <h1>Возможность выбрать курс для обучения</h1>

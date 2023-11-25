@@ -344,19 +344,19 @@ body::-webkit-scrollbar {
   }
 
   85% {
-    opacity: 0.4;
+    opacity: 0.3;
   }
 
   90% {
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
   95% {
-    opacity: 0.8;
+    opacity: 0.4;
   }
 
   100% {
-    opacity: 1;
+    opacity: 0.3;
     width: calc(100vh / 6);
     height: calc(100vh / 6);
   }
@@ -370,7 +370,7 @@ body::-webkit-scrollbar {
   background-color: #ffac00;
   z-index: 1;
   /* */
-  opacity: 1;
+  opacity: 0.3;
   width: calc(100vh / 6);
   height: calc(100vh / 6);
   left: 50%;
@@ -380,6 +380,7 @@ body::-webkit-scrollbar {
 }
 
 .tg-info-wrap {
+  position: relative;
   background-color: rgb(var(--invert-font-color));
   color: rgb(var(--background-end-rgb));
   min-width: 520px;
@@ -387,6 +388,69 @@ body::-webkit-scrollbar {
   padding: 30px;
   border-radius: 57px;
   z-index: 2;
+}
+
+.tg-info-slide-forward,
+.tg-info-slide-back {
+  position: absolute;
+  opacity: 0.7;
+  width: 70px;
+  height: 70px;
+  top: 50%;
+  border-radius: 50%;
+  color: rgb(var(--background-end-rgb));
+  background-color: #ffac00;
+}
+
+.tg-info-slide-forward:disabled,
+.tg-info-slide-back:disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.tg-info-slide-forward:hover,
+.tg-info-slide-back:hover {
+  opacity: 1;
+}
+
+.tg-info-slide-forward::after,
+.tg-info-slide-back::after,
+.tg-info-slide-forward::before,
+.tg-info-slide-back::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 3px;
+  background: white;
+  left: 50%;
+}
+
+.tg-info-slide-forward::after,
+.tg-info-slide-back::after {
+  transform: translate(-50%, -50%) rotate(-135deg);
+  top: calc(50% - 9px);
+}
+
+.tg-info-slide-forward::before,
+.tg-info-slide-back::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+  top: calc(50% + 9px);
+}
+
+.tg-info-slide-forward::after {
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.tg-info-slide-forward::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.tg-info-slide-back {
+  left: 0;
+}
+
+.tg-info-slide-forward {
+  right: 0;
 }
 
 .tg-link {
