@@ -8,7 +8,7 @@ import WaveTextAnimator from "@/app/components/WaveText/WaveTextAnimator";
 import HeaderMenu from "../HeaderMenu/HeaderMenu";
 import { useSearchParams } from "next/navigation";
 
-export const Section1Content = () => {
+export const WelcomeContent = () => {
     // const { sheets } = props;
     const [modalData, setModalData] = useState<ModalData>();
     const searchParams = useSearchParams();
