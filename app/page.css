@@ -227,6 +227,7 @@ body::-webkit-scrollbar {
 .content.tg {
   background: rgba(223, 240, 255, 1);
   display: flex;
+  position: relative;
   align-items: center;
 }
 
@@ -234,7 +235,7 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: row;
   position: relative;
-  padding: 20px;
+  padding: 70px;
   width: 100%;
   z-index: 2;
   justify-content: space-between;
@@ -362,7 +363,7 @@ body::-webkit-scrollbar {
   }
 }
 
-.tg-info::before {
+.content.tg::before {
   content: "";
   display: block;
   position: absolute;
@@ -380,7 +381,6 @@ body::-webkit-scrollbar {
 }
 
 .tg-info-wrap {
-  position: relative;
   background-color: rgb(var(--invert-font-color));
   color: rgb(var(--background-end-rgb));
   min-width: 520px;
@@ -390,7 +390,7 @@ body::-webkit-scrollbar {
   z-index: 2;
 }
 
-.tg-info-slide-forward,
+/* .tg-info-slide-forward,
 .tg-info-slide-back {
   position: absolute;
   opacity: 0.7;
@@ -451,7 +451,7 @@ body::-webkit-scrollbar {
 
 .tg-info-slide-forward {
   right: 0;
-}
+} */
 
 .tg-link {
   display: block;
@@ -614,6 +614,7 @@ span.protectedNumber:before {
 
   .tg-content {
     flex-direction: column;
+    padding: 20px;
     gap: 10px;
   }
 
