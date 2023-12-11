@@ -53,7 +53,11 @@ export default function RootLayout({
         <link href="https://fonts.cdnfonts.com/css/montserrat-alternates" rel="stylesheet" />
         <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        {/* new year snow falling */}
+        <script async src="https://thecode.media/wp-content/uploads/2019/12/snowfall2020.js" />
+      </body>
     </html>
   )
 }
