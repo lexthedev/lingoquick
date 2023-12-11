@@ -56,7 +56,8 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         {/* new year snow falling */}
-        <script async src="https://thecode.media/wp-content/uploads/2019/12/snowfall2020.js" />
+        {/* <script async src="https://thecode.media/wp-content/uploads/2019/12/snowfall2020.js" /> */}
+        <script async src="/scripts/snow.js" />
       </body>
     </html>
   )
