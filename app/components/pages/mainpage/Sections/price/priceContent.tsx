@@ -12,14 +12,6 @@ export const PriceContent = () => {
 
     const Cards: ICard[] = [
         {
-            // icon: <Image
-            //     src="/icons/lightning.svg"
-            //     alt="lightning"
-            //     className="dark:invert"
-            //     width={60}
-            //     height={60}
-            //     priority
-            // />,
             icon: <Lightning />,
             title: 'Марафон',
             oldPrice: '10 200 ₽',
@@ -28,14 +20,6 @@ export const PriceContent = () => {
             onePrice: '580 ₽',
         },
         {
-            // icon: <Image
-            //     src="/icons/task-list.svg"
-            //     alt="task-list"
-            //     className="dark:invert"
-            //     width={60}
-            //     height={60}
-            //     priority
-            // />,
             icon: <TaskList />,
             title: 'Надежный план',
             oldPrice: '7 999 ₽',
@@ -44,14 +28,6 @@ export const PriceContent = () => {
             onePrice: '600 ₽',
         },
         {
-            // icon: <Image
-            //     src="/icons/sprint.svg"
-            //     alt="sprint"
-            //     className="dark:invert"
-            //     width={60}
-            //     height={60}
-            //     priority
-            // />,
             icon: <Sprint />,
             title: 'Спринт',
             oldPrice: '5 999 ₽',
