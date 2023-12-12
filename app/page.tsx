@@ -1,5 +1,5 @@
 // import Image from 'next/image'
-import { WelcomeContent, TelegramContent, TargetsContent, FaqContent } from './components'
+import { WelcomeContent, TelegramContent, TargetsContent, FaqContent, PriceContent } from './components'
 import ScrollUp from './components/ScrollUp/ScrollUp'
 import './page.css'
 
@@ -10,6 +10,7 @@ export default async function Home() {
       <WelcomeContent />
       <TelegramContent />
       <TargetsContent />
+      <PriceContent />
       <FaqContent />
     </main>
   )

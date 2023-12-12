@@ -1,0 +1,128 @@
+.content.prices {
+  color: rgb(var(--invert-font-color));
+  background-color: rgb(var(--invert-font-color));
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.prices-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.price-card {
+  width: 433px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: rgb(var(--background-end-rgb));
+  transition: all 1s;
+}
+
+.card-icon {
+  margin-bottom: 30px;
+  color: rgb(var(--yellow-background));
+}
+
+.card-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-price-old {
+  font-size: 32px;
+  margin: 0 auto -10px auto;
+  max-width: fit-content;
+  position: relative;
+  color: rgb(var(--yellow-background));
+  padding: 5px;
+}
+
+.card-price-old::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: calc(100% + 20px);
+  left: -10px;
+  transform: rotate(155deg);
+  top: 50%;
+  background: red;
+}
+
+.card-price-new {
+  font-size: 32px;
+  color: rgb(var(--yellow-background));
+}
+
+.class-quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(var(--yellow-background));
+}
+
+.class-one-class {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(var(--yellow-background));
+}
+
+.price-dislamer {
+  color: rgba(var(--invert-font-color), 0.7);
+  text-align: left;
+}
+
+.register-link {
+  padding: 10px 20px;
+  background-color: rgb(var(--yellow-background));
+  border-radius: 20px;
+  color: rgb(var(--background-end-rgb));
+}
+
+.yellow {
+  color: rgb(var(--yellow-background));
+}
+
+@media screen and (max-width: 1365px) {
+  .prices-cards {
+    flex-direction: column;
+  }
+
+  .price-card:not(.open) {
+    color: #696969;
+    background-color: transparent;
+    border: 1px solid rgb(var(--background-end-rgb));
+  }
+
+  .price-card:not(.open) .makeMeWhite {
+    fill: white;
+  }
+
+  .price-card:not(.open) .card-content {
+    display: none;
+  }
+
+  .price-card:not(.open) .card-icon {
+    color: #696969;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .price-card {
+    width: 330px;
+  }
+}
