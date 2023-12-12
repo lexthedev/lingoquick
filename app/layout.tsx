@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
 export const metadata: Metadata = {
-  title: 'Lingo Quick - ассоциация молодых лингвистов.',
+  title: 'Lingo Quick - лингвистическая онлайн-школа.',
   description: 'Онлайн консультации по иностранным языкам. Изучение языков для школьников и родителей.',
   viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
