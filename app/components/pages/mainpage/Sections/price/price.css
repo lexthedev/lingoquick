@@ -109,7 +109,7 @@
   }
 
   .price-card:not(.open) .makeMeWhite {
-    fill: white;
+    fill: #696969;
   }
 
   .price-card:not(.open) .card-content {
@@ -124,5 +124,11 @@
 @media screen and (max-width: 450px) {
   .price-card {
     width: 330px;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) and (max-width: 1365px) {
+  .price-card:not(.open) .makeMeWhite {
+    fill: #fff;
   }
 }
