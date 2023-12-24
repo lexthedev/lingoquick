@@ -7,11 +7,10 @@ body {
 
 main {
   overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-body::-webkit-scrollbar {
-  display: none;
+  overflow-y: scroll;
+  height: 100vh;
+  /* scroll-snap-points-y: repeat(100vh); */
+  scroll-snap-type: y mandatory;
 }
 
 .header {
@@ -50,6 +49,7 @@ body::-webkit-scrollbar {
 
 .content {
   min-height: calc(100vh - max(10px, 5vh));
+  scroll-snap-align: center;
 }
 
 .agitate {
@@ -140,6 +140,7 @@ body::-webkit-scrollbar {
   gap: 20px;
   justify-content: center;
   overflow-x: hidden;
+  scroll-snap-type: x mandatory;
 }
 
 .courses .target-list .target {
@@ -156,6 +157,7 @@ body::-webkit-scrollbar {
   cursor: pointer;
   text-align: center;
   padding: 20px;
+  scroll-snap-align: center;
 }
 .courses .target-list .target h2 {
   /* font-size: 47px; */
