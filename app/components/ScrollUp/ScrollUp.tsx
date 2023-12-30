@@ -1,10 +1,14 @@
 'use client';
-import { useLayoutEffect, useState } from "react"
+import { useEffect, useLayoutEffect, useState } from "react"
 import './ScrollUp.css'
 
 const ScrollUp = () => {
 
     const [btnVisible, setBtnVisible] = useState(false);
+
+    useLayoutEffect(() => {
+        if (location.href.search('#') > 0) setBtnVisible(true)
+    });
 
     const checkToShowScroll = () => {
         const showScroll = window.scrollY > 0;
