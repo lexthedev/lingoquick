@@ -11,7 +11,7 @@
     rgba(var(--background-start-rgb), 0.2),
     rgba(var(--background-end-rgb), 0.2)
   );
-  box-shadow: 1px 1px 12px 2px var(--box-shadow);
+  box-shadow: 1px 1px 12px 2px rgb(var(--box-shadow));
   z-index: 99999;
 }
 
