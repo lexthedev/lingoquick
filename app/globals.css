@@ -11,20 +11,22 @@ html {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --box-shadow: #6c4800;
+  --box-shadow: 108, 72, 0;
   /* --text-shadow: #6c480010; */
   --text-shadow: rgb(108 72 0 / 6%);
   --background-orange-start: 254, 173, 13;
   --background-orange-end: 254, 182, 44;
 
-  --white-background: #ffffff;
-  --black-background: #000000;
+  --const-white: 255, 255, 255;
+  --const-black: 0, 0, 0;
   --invert-font-color: 0, 0, 0;
 
   --icon-background: 33, 32, 30;
 
   --grey-background: 255, 252, 227;
   --yellow-background: 255, 229, 0;
+
+  --light-blue: 223, 240, 255
 }
 
 @media (prefers-color-scheme: dark) {
