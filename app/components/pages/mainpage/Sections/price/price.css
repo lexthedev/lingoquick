@@ -2,10 +2,18 @@
   color: rgb(var(--invert-font-color));
   background-color: rgb(var(--invert-font-color));
   display: flex;
+  flex-direction: column;
+  gap: 30px;
   padding: 10px;
   justify-content: center;
   align-items: center;
-  scroll-snap-type: y mandatory ;
+  scroll-snap-type: y mandatory;
+}
+
+.content.prices .title {
+  color: rgb(var(--background-end-rgb));
+  text-align: center;
+  display: none;
 }
 
 .prices-cards {
@@ -100,6 +108,11 @@
 }
 
 @media screen and (max-width: 1365px) {
+
+  .content.prices .title {
+    display: block;
+  }
+
   .prices-cards {
     flex-direction: column;
   }

@@ -6,7 +6,7 @@ import { Carousel } from 'react-responsive-carousel';
 export const TelegramContent = () => {
     return <section className='content tg'>
         <div className="tg-title">
-            <h1> </h1 >
+            <h1>Подпишитесь на наш «Tелеграм», и будьте в курсе всех событий школы </h1 >
         </div >
         <div className="tg-content">
             <Carousel

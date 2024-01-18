@@ -7,6 +7,8 @@ body {
 
 main {
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
   /* overflow-y: scroll;
   height: 100vh; */
   /* scroll-snap-points-y: repeat(100vh); */
@@ -83,6 +85,7 @@ main::-webkit-scrollbar {
   box-shadow: 1px 1px 12px 2px rgb(var(--box-shadow));
   background: rgba(var(--icon-background), 0.9);
   border-radius: 10px;
+  text-align: center;
 }
 
 .main-section-content .request-free-lesson-button:hover {
@@ -127,9 +130,18 @@ main::-webkit-scrollbar {
 
 .content.tg {
   background: rgba(var(--light-blue), 1);
-  display: flex;
   position: relative;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.tg-title {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  /* color: rgb(var(--const-black)); */
+  color: rgba(var(--icon-background), 0.9);
+  z-index: 2;
 }
 
 .tg-content {
@@ -179,7 +191,7 @@ main::-webkit-scrollbar {
   display: block;
   position: absolute;
   border-radius: 50%;
-  background-color: #ffac00;
+  background-color: #ffac00a0;
 
   z-index: 1;
   /* */
@@ -473,10 +485,16 @@ span.protectedNumber:before {
   animation: hide 1 2s;
 }
 
-@media screen and (min-width: 1270px) {
-  .main-description {
+@media screen and (max-width: 1270px) {
+  /* .main-description {
     font-size: 24px;
-  }
+  } */
+
+  section.content.agitate {order: 1;}
+  section.content.courses {order: 2;}
+  section.content.prices {order: 3;}
+  section.content.tg {order: 4;}
+  section.content.faq {order: 5;}
 
   /* .courses .target-list {
     flex-wrap: wrap;

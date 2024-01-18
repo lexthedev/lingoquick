@@ -5,13 +5,15 @@ import './page.css'
 
 export default async function Home() {
   return (
-    <main>
+    <>
       <ScrollUp />
-      <WelcomeContent />
-      <CoursesContent />
-      <PriceContent />
-      <TelegramContent />
-      <FaqContent />
-    </main>
+      <main>
+        <WelcomeContent />
+        <TelegramContent />
+        <CoursesContent />
+        <PriceContent />
+        <FaqContent />
+      </main>
+    </>
   )
 }
