@@ -38,6 +38,10 @@ export const PriceContent = () => {
     ];
 
     return <section className='content prices'>
+        <div className="title">
+            <h1>Вместе - дешевле</h1>
+            <h2>Подберите свой пакет занятий</h2>
+        </div>
         <div className="prices-cards">
             {Cards.map((card, index) => <Card
                 {...card}
