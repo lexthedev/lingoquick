@@ -6,9 +6,18 @@ const ScrollUp = () => {
 
     const [btnVisible, setBtnVisible] = useState(false);
 
+    const scrollToAnchorElement = () => {
+        const urlPieces = location.href.split('#');
+        if (urlPieces.length > 1) {
+            const element = document.getElementById(urlPieces[1])
+            if (element) element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+        }
+    }
+
     useLayoutEffect(() => {
         if (location.href.search('#') > 0) setBtnVisible(true)
-    });
+        scrollToAnchorElement(); // TO-DO: Remove this ad-hoc
+    }, []);
 
     const checkToShowScroll = () => {
         const showScroll = window.scrollY > 0;
