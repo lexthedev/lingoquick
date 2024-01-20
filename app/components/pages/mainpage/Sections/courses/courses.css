@@ -180,6 +180,12 @@
   background-image: url("/img/courses/icons/tickets.png");
 }
 
+@media screen and (min-width: 1270px) {
+  .content.courses {
+    min-height: auto;
+  }
+}
+
 @media screen and (max-width: 1090px) {
   .content.courses .content-wrapper {
     flex-direction: column;

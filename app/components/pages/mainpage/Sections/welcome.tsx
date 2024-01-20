@@ -13,6 +13,7 @@ export const WelcomeContent = () => {
     const [modalData, setModalData] = useState<ModalData>();
     const searchParams = useSearchParams();
     const targetFromSearch = searchParams.get('target');
+    const request = searchParams.get('request');
     const requestSubmit = async (data: StudentInfo) => {
         showInfo('wait');
         const status = await addRequest(data);
@@ -75,6 +76,10 @@ export const WelcomeContent = () => {
         if (!!targetFromSearch) showInfo('request');
     }, [targetFromSearch])
 
+    useEffect(() => {
+        if (!!request) showInfo('request');
+    }, [request])
+
     const onClickShowInfo = (event: React.MouseEvent<Element, MouseEvent>, header = '') => {
         event.preventDefault();
         showInfo(header);
@@ -86,13 +91,13 @@ export const WelcomeContent = () => {
             {...modalData}
         />}
         <section className='content agitate'>
-            <div className="header w-full flex no-wrap justify-between">
+            <div className="header">
                 <HeaderMenu />
-                <div className='top-links right flex flex-end'>
+                {/* <div className='top-links'>
                     <a href="/" onClick={e => onClickShowInfo(e, 'request')}>
                         Запись на бесплатный урок
                     </a>
-                </div>
+                </div> */}
             </div>
 
             <div className="main-section-content p-[50px] items-center flex">

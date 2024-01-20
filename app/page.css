@@ -23,8 +23,80 @@ main::-webkit-scrollbar {
 .header {
   background: rgb(var(--icon-background));
   min-height: 3em;
-  padding: 13px 50px;
-  flex: 0 1 auto;
+}
+
+.header .navigate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.top-links.wide-menu {
+  --menu-border-radius: 10px;
+  --menu-half-border-radius: calc(var(--menu-border-radius) * 0.5);
+
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.top-links.wide-menu .fake-link {
+  min-width: 60px;
+  background: #febd2d;
+}
+
+.top-links.wide-menu .fake-link .filler {
+  background: rgb(var(--icon-background));
+  width: 100%;
+  height: 100%;
+}
+
+.top-links.wide-menu > .top-link-wrap {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background: #febd2d;
+}
+
+.top-links.wide-menu > .top-link-wrap a {
+  background: rgb(var(--icon-background));
+  width: 100%;
+  height: 100%;
+}
+
+.top-links.wide-menu > .top-link-wrap a .link-filler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: var(--menu-border-radius);
+  border-top-left-radius: var(--menu-border-radius);
+}
+
+/* to-do fix here */
+.top-links.wide-menu > .top-link-wrap a .link-filler .link-text {
+  min-width: max-content;
+  padding: 10px 25px;
+}
+
+.top-links.wide-menu > .top-link-wrap:hover a {
+  color: rgb(var(--icon-background));
+}
+
+.top-links.wide-menu > .top-link-wrap:hover a .link-filler {
+  background: #febd2d;
+}
+
+.top-links.wide-menu > .top-link-wrap:hover + .top-link-wrap a,
+.top-links.wide-menu > .top-link-wrap:hover + .fake-link .filler {
+  border-bottom-left-radius: var(--menu-half-border-radius);
+}
+
+.top-links.wide-menu > .top-link-wrap:has(+ .top-link-wrap:hover) a,
+.top-links.wide-menu > .fake-link:has(+ .top-link-wrap:hover) .filler {
+  border-bottom-right-radius: var(--menu-half-border-radius);
 }
 
 @keyframes appearence {
@@ -54,6 +126,16 @@ main::-webkit-scrollbar {
   animation: 1s ease-in-out 1 appearence;
 }
 
+.top-links.mobile-view,
+.burger-menu .make_request {
+  display: none;
+}
+
+.top-links.mobile-view .burger-menu {
+  display: grid;
+  position: absolute;
+}
+
 .content {
   min-height: calc(100vh - max(10px, 5vh));
   scroll-snap-align: center;
@@ -63,21 +145,22 @@ main::-webkit-scrollbar {
   position: relative;
   display: flex;
   flex-direction: column;
-}
 
-.main-section-content {
-  width: 100%;
-  height: 100%;
   background: linear-gradient(
     to left,
     rgb(var(--background-orange-start)),
     rgb(var(--background-orange-end))
   );
-  flex: 1 1 auto;
   background-image: url("/img/girl-stupid.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.main-section-content {
+  width: 100%;
+  height: 100%;
+  flex: 1 1 auto;
 }
 
 .main-section-content .request-free-lesson-button {
@@ -303,69 +386,6 @@ main::-webkit-scrollbar {
   z-index: 2;
 }
 
-/* .tg-info-slide-forward,
-.tg-info-slide-back {
-  position: absolute;
-  opacity: 0.7;
-  width: 70px;
-  height: 70px;
-  top: 50%;
-  border-radius: 50%;
-  color: rgb(var(--background-end-rgb));
-  background-color: #ffac00;
-}
-
-.tg-info-slide-forward:disabled,
-.tg-info-slide-back:disabled {
-  opacity: 0.2;
-  pointer-events: none;
-}
-
-.tg-info-slide-forward:hover,
-.tg-info-slide-back:hover {
-  opacity: 1;
-}
-
-.tg-info-slide-forward::after,
-.tg-info-slide-back::after,
-.tg-info-slide-forward::before,
-.tg-info-slide-back::before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 3px;
-  background: white;
-  left: 50%;
-}
-
-.tg-info-slide-forward::after,
-.tg-info-slide-back::after {
-  transform: translate(-50%, -50%) rotate(-135deg);
-  top: calc(50% - 9px);
-}
-
-.tg-info-slide-forward::before,
-.tg-info-slide-back::before {
-  transform: translate(-50%, -50%) rotate(-45deg);
-  top: calc(50% + 9px);
-}
-
-.tg-info-slide-forward::after {
-  transform: translate(-50%, -50%) rotate(135deg);
-}
-
-.tg-info-slide-forward::before {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.tg-info-slide-back {
-  left: 0;
-}
-
-.tg-info-slide-forward {
-  right: 0;
-} */
-
 .tg-link {
   display: block;
   width: 100%;
@@ -490,11 +510,21 @@ span.protectedNumber:before {
     font-size: 24px;
   } */
 
-  section.content.agitate {order: 1;}
-  section.content.courses {order: 2;}
-  section.content.prices {order: 3;}
-  section.content.tg {order: 4;}
-  section.content.faq {order: 5;}
+  section.content.agitate {
+    order: 1;
+  }
+  section.content.courses {
+    order: 2;
+  }
+  section.content.prices {
+    order: 3;
+  }
+  section.content.tg {
+    order: 4;
+  }
+  section.content.faq {
+    order: 5;
+  }
 
   /* .courses .target-list {
     flex-wrap: wrap;
@@ -522,14 +552,25 @@ span.protectedNumber:before {
     padding: 10px;
   }
 
-  /* .courses {
-    padding: 10px;
-  } */
+  .header .top-links {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 
-  /* section.content.students .float-care {
+  .top-links.wide-menu {
+    display: none;
+  }
+
+  .burger-menu .make_request {
+    display: block;
+  }
+
+  .top-links.mobile-view {
+    display: flex;
     width: 100%;
-    text-align: center;
-  } */
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
   .tg-content {
     flex-direction: column;
@@ -546,10 +587,6 @@ span.protectedNumber:before {
   }
 }
 
-.top-links.burger-menu {
-  display: none;
-}
-
 @media screen and (max-width: 750px) {
   body {
     color: #ffffff;
@@ -558,20 +595,6 @@ span.protectedNumber:before {
 
   h1 {
     font-size: 1.5em;
-  }
-
-  .header .top-links {
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-
-  .top-links.wide-menu {
-    display: none;
-  }
-
-  .top-links.burger-menu {
-    display: grid;
-    position: absolute;
   }
 
   .modal {
