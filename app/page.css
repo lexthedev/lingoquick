@@ -15,6 +15,35 @@ main {
   /* scroll-snap-type: y mandatory; */
 }
 
+.main-section-content {
+  padding: 50px;
+  justify-items: center;
+  display: flex;
+  height: 100%;
+  flex: 1 1 auto;
+}
+
+.main-section-content .main-description {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-section-content .request-free-lesson-button {
+  padding: 10px;
+  box-shadow: 1px 1px 12px 2px rgb(var(--box-shadow));
+  background: rgba(var(--icon-background), 0.9);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.main-section-content .request-free-lesson-button:hover {
+  box-shadow: 1px 1px 12px 2px rgb(var(--box-shadow));
+  background: rgb(var(--icon-background));
+}
+
 body::-webkit-scrollbar,
 main::-webkit-scrollbar {
   display: none;
@@ -22,7 +51,6 @@ main::-webkit-scrollbar {
 
 .header {
   background: rgb(var(--icon-background));
-  min-height: 3em;
 }
 
 .header .navigate {
@@ -54,30 +82,21 @@ main::-webkit-scrollbar {
 .top-links.wide-menu > .top-link-wrap {
   display: flex;
   text-align: center;
-  width: 100%;
-  height: 100%;
   background: #febd2d;
 }
 
 .top-links.wide-menu > .top-link-wrap a {
+  display: flex;
+  align-items: center;
   background: rgb(var(--icon-background));
-  width: 100%;
-  height: 100%;
 }
 
 .top-links.wide-menu > .top-link-wrap a .link-filler {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
   border-top-right-radius: var(--menu-border-radius);
   border-top-left-radius: var(--menu-border-radius);
 }
 
-/* to-do fix here */
 .top-links.wide-menu > .top-link-wrap a .link-filler .link-text {
-  min-width: max-content;
   padding: 10px 25px;
 }
 
@@ -157,54 +176,8 @@ main::-webkit-scrollbar {
   background-size: cover;
 }
 
-.main-section-content {
-  width: 100%;
-  height: 100%;
-  flex: 1 1 auto;
-}
-
-.main-section-content .request-free-lesson-button {
-  padding: 10px;
-  box-shadow: 1px 1px 12px 2px rgb(var(--box-shadow));
-  background: rgba(var(--icon-background), 0.9);
-  border-radius: 10px;
-  text-align: center;
-}
-
-.main-section-content .request-free-lesson-button:hover {
-  box-shadow: 1px 1px 12px 2px rgb(var(--box-shadow));
-  background: rgb(var(--icon-background));
-}
-
-.bottom-promo {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.bottom-promo .promo-item {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  flex-direction: column;
-  justify-content: top;
-  margin-bottom: 30px;
-}
-
-.bottom-promo .promo-item h2,
-.bottom-promo .promo-item p {
-  text-align: center;
-}
-
-.bottom-promo .promo-item img {
-  margin-top: 15px;
-  width: 50%;
-  height: auto;
-}
-
 .welcome .top-links,
-.agitate,
-.bottom-promo {
+.agitate {
   text-shadow: 2px 0 var(--text-shadow), -2px 0 var(--text-shadow),
     0 2px var(--text-shadow), 0 -2px var(--text-shadow),
     1px 1px var(--text-shadow), -1px -1px var(--text-shadow),
@@ -397,6 +370,33 @@ main::-webkit-scrollbar {
 
 .content.faq {
   color: rgb(var(--invert-font-color));
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 50px;
+  padding-bottom: 5px;
+}
+
+.faq-header {
+  display: flex;
+  margin: 25px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content.faq .socials {
+  display: flex;
+  justify-content: center;
+  column-gap: 3px;
+  margin-top: 5px;
+}
+
+.faq-questions {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  margin: 5px 35px 35px 35px;
 }
 
 .faq-questions .faq-answer {
@@ -506,10 +506,6 @@ span.protectedNumber:before {
 }
 
 @media screen and (max-width: 1270px) {
-  /* .main-description {
-    font-size: 24px;
-  } */
-
   section.content.agitate {
     order: 1;
   }
@@ -525,24 +521,18 @@ span.protectedNumber:before {
   section.content.faq {
     order: 5;
   }
-
-  /* .courses .target-list {
-    flex-wrap: wrap;
-    /* max-height: 100%;
-  } */
 }
 
 @media screen and (max-width: 1090px) {
-  /* .courses .target-list {
-    overflow: auto;
-    justify-content: unset;
-  }
-  .courses .target-list .target-wrapper:hover {
-    padding-top: 20px;
-  } */
   .tg-info::before {
     opacity: 0.3;
     pointer-events: none;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .top-links.wide-menu > .top-link-wrap a .link-filler .link-text {
+    padding: 10px 10px;
   }
 }
 
@@ -600,10 +590,14 @@ span.protectedNumber:before {
   .modal {
     width: calc(100% - 20px);
   }
+
+  .request-free-lesson-button h1 {
+    margin: 0;
+  }
 }
 
 @media screen and (max-width: 630px) {
-  .main-description {
+  .main-section-content .main-description {
     flex-direction: column;
     gap: 30px;
     text-align: center;
@@ -614,15 +608,12 @@ span.protectedNumber:before {
       rgba(var(--background-start-rgb), 0.2),
       rgba(var(--background-end-rgb), 0.2)
     );
+    flex-direction: column;
   }
 
   .top-links.right {
     display: none;
   }
-
-  /* .wave-text {
-    margin: 0 auto;
-  } */
 
   .main-section-content .request-free-lesson-button {
     max-width: fit-content;
@@ -631,28 +622,6 @@ span.protectedNumber:before {
 
   .tg-info-wrap {
     min-width: calc(100% - 10px);
-  }
-
-  /* .courses .target-list .target-wrapper .target {
-    font-size: calc(0.2vw + 0.1vh + 4vmin);
-  } */
-
-  .bottom-promo,
-  .float-care {
-    padding: 10px;
-    background: linear-gradient(
-      rgba(var(--background-start-rgb), 0.2),
-      rgba(var(--background-end-rgb), 0.2)
-    );
-  }
-
-  .bottom-promo {
-    font-size: 0.7em;
-  }
-
-  .bottom-promo .promo-item {
-    margin-bottom: 0;
-    justify-content: space-between;
   }
 
   .faq-question {

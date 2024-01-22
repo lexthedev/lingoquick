@@ -160,8 +160,7 @@
 
 .content.courses .courses-list .course-wrap .flyout-descr-text {
   position: absolute;
-  min-width: 100%;
-  min-height: 100%;
+  height: calc(100% * 2/3);
   padding: 20px;
   background: rgb(194, 239, 236);
   border-radius: 30px;

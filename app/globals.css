@@ -1,10 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html {
+html * {
   scroll-behavior: smooth;
   font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+a:visited {
+  color: unset;
 }
 
 :root {
@@ -26,7 +32,7 @@ html {
   --grey-background: 255, 252, 227;
   --yellow-background: 255, 229, 0;
 
-  --light-blue: 223, 240, 255
+  --light-blue: 223, 240, 255;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,9 +42,15 @@ html {
     --background-end-rgb: 0, 0, 0;
     --invert-font-color: 255, 255, 255;
   }
+
+  [class="dark:invert"] {
+    filter: invert(100%);
+  }
 }
 
 body {
+  margin: 0;
+  padding: 0;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
