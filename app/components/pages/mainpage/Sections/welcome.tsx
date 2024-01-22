@@ -100,9 +100,9 @@ export const WelcomeContent = () => {
                 </div> */}
             </div>
 
-            <div className="main-section-content p-[50px] items-center flex">
-                <div className="main-description w-full flex justify-between">
-                    <div className='left flex flex-col'>
+            <div className="main-section-content">
+                <div className="main-description">
+                    <div>
                         <h1>
                             <div>С нами -</div>
                             <div>учить языки проще.</div>
@@ -110,11 +110,13 @@ export const WelcomeContent = () => {
                         </h1>
                         <p>Онлайн-школа, которая нравится Вашим детям</p>
                     </div>
-                    <div className="right request-free-lesson-button order mt-[auto]">
-                        <a href="/" onClick={e => onClickShowInfo(e, 'request')}><h1>
-                            {/* <WaveTextAnimator text={'Оставить заявку'} onClick={e => onClickShowInfo(e, 'request')} /> */}
-                            <span>Оставить заявку</span>
-                        </h1></a>
+                    <div className="request-free-lesson-button">
+                        <a href="/" onClick={e => onClickShowInfo(e, 'request')}>
+                            <h1>
+                                {/* <WaveTextAnimator text={'Оставить заявку'} onClick={e => onClickShowInfo(e, 'request')} /> */}
+                                <span>Оставить заявку</span>
+                            </h1>
+                        </a>
                     </div>
                 </div>
             </div>

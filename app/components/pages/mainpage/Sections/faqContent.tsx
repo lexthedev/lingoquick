@@ -50,11 +50,11 @@ export const FaqContent = () => {
         }
     };
 
-    return <section id="section-faq" className='content faq flex flex-col text-center p-[50px] pb-0 faq'>
-        <div className="faq-header flex m-[25px] flex-col justify-center">
+    return <section id="section-faq" className='content faq'>
+        <div className="faq-header">
             <h1 className="m-[25px]">Ответы на часто задаваемые вопросы</h1>
             <h3>Не нашли ответ на интересующий Вас вопрос? Задайте его в наших социальных сетях:</h3>
-            <div className="flex justify-center gap-x-3 mt-5">
+            <div className="socials">
                 <a href="https://t.me/LingoQuick">
                     <Image
                         src="/icons/telegram.svg"
@@ -75,7 +75,7 @@ export const FaqContent = () => {
                     /></a>
             </div>
         </div>
-        <div className="faq-questions text-left flex flex-col gap-y-6 m-[35px] mt-5">
+        <div className="faq-questions">
             <div className={`faq-element ${blockToShow === 'about' ? 'show' : 'hide'} `}>
                 <div className='faq-question' onClick={() => switchBlockToShow('about')}>
                     <div className="switcher"></div>
