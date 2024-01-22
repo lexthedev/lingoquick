@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useLayoutEffect, useState } from "react"
+import { useLayoutEffect, useState } from "react"
 import './ScrollUp.css'
 
 const ScrollUp = () => {
@@ -10,7 +10,7 @@ const ScrollUp = () => {
         const urlPieces = location.href.split('#');
         if (urlPieces.length > 1) {
             const element = document.getElementById(urlPieces[1])
-            if (element) element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+            if (element) element.scrollIntoView(false);
         }
     }
 
