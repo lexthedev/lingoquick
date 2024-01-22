@@ -14,8 +14,6 @@ const ScrollUp = () => {
         }
     }
 
-    useEffect(() => { fetch('/api/createPayment', { method: 'GET' }).then((data) => console.log(data)) }, []);
-
     useLayoutEffect(() => {
         if (location.href.search('#') > 0) setBtnVisible(true)
         scrollToAnchorElement(); // TO-DO: Remove this ad-hoc
