@@ -1,7 +1,7 @@
 import { GoogleAuth } from 'google-auth-library';
 import { google } from 'googleapis';
 
-const googleAuthService = (scopes: string[]) => {
+export const googleAuthService = (scopes: string[]) => {
 
     const auth = new GoogleAuth({
         credentials: {
@@ -21,7 +21,7 @@ const googleAuthService = (scopes: string[]) => {
 
 
     // const responce = await sheets.spreadsheets.values.get({
-    //     spreadsheetId: process.env.SHEET_ID,
+    //     spreadsheetId: process.env.REQUESTS_SHEET_ID,
     //     range
     // })
 
@@ -34,5 +34,3 @@ const googleAuthService = (scopes: string[]) => {
     //     }
     // }
 }
-
-export default googleAuthService;

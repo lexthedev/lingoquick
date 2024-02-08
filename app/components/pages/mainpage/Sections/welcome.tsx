@@ -3,7 +3,7 @@ import { RequestFreeLesson, StudentInfo } from "../RequestFreeLesson/requestFree
 import { ModalData } from "@/app/components";
 import { useEffect, useState } from "react";
 import Modal from "@/app/components/Modal/Modal";
-import addRequest from "@/app/services/addRequest";
+import { addRequest } from "@/app/services/addRequest";
 import WaveTextAnimator from "@/app/components/WaveText/WaveTextAnimator";
 import HeaderMenu from "../HeaderMenu/HeaderMenu";
 import { useSearchParams } from "next/navigation";
@@ -14,6 +14,7 @@ export const WelcomeContent = () => {
     const searchParams = useSearchParams();
     const targetFromSearch = searchParams.get('target');
     const request = searchParams.get('request');
+    const showModal = searchParams.get('showModal');
     const requestSubmit = async (data: StudentInfo) => {
         showInfo('wait');
         const status = await addRequest(data);
@@ -29,14 +30,14 @@ export const WelcomeContent = () => {
         switch (header) {
             case 'request':
                 data = {
-                    headerText: 'Сделай первый шаг к изучению языков с Lingo Quick',
+                    headerText: 'Сделайте первый шаг к изучению языков с Lingo Quick',
                     text: <RequestFreeLesson target={targetFromSearch} onAddRequest={(data) => requestSubmit(data)} />
                 }
                 break;
 
             case 'wait':
                 data = {
-                    headerText: 'Сделай первый шаг к изучению языков с Lingo Quick',
+                    headerText: 'Сделайте первый шаг к изучению языков с Lingo Quick',
                     text: <div>Подождите...</div>
                 }
                 break;
@@ -53,7 +54,7 @@ export const WelcomeContent = () => {
 
             case 'error':
                 data = {
-                    headerText: 'Сделай первый шаг к изучению языков с Lingo Quick',
+                    headerText: 'Сделайте первый шаг к изучению языков с Lingo Quick',
                     text: <div>Произошла ошибка, попробуйте немного позднее.</div>
                 }
                 break;
@@ -64,7 +65,7 @@ export const WelcomeContent = () => {
                 //     text: 'Помогите нам её воспроизвести и получите скидку на обучение :)'
                 // }
                 data = {
-                    headerText: 'Сделай первый шаг к изучению языков с Lingo Quick',
+                    headerText: 'Сделайте первый шаг к изучению языков с Lingo Quick',
                     text: <RequestFreeLesson target={targetFromSearch} onAddRequest={(data) => requestSubmit(data)} />
                 }
                 break;
@@ -79,6 +80,13 @@ export const WelcomeContent = () => {
     useEffect(() => {
         if (!!request) showInfo('request');
     }, [request])
+
+    useEffect(() => {
+        if (!!showModal) {
+            const [headerText, text] = JSON.parse(decodeURI(showModal));
+            setModalData({ headerText, text })
+        };
+    }, [showModal])
 
     const onClickShowInfo = (event: React.MouseEvent<Element, MouseEvent>, header = '') => {
         event.preventDefault();

@@ -16,6 +16,7 @@ export const PriceContent = () => {
             title: 'Марафон',
             oldPrice: '10 200 ₽',
             newPrice: '8 699 ₽',
+            priceValue: 8699,
             quantity: 15,
             onePrice: '580 ₽',
         },
@@ -24,6 +25,7 @@ export const PriceContent = () => {
             title: 'Надежный план',
             oldPrice: '7 999 ₽',
             newPrice: '5 999 ₽',
+            priceValue: 5999,
             quantity: 10,
             onePrice: '600 ₽',
         },
@@ -32,6 +34,7 @@ export const PriceContent = () => {
             title: 'Спринт',
             oldPrice: '5 999 ₽',
             newPrice: '3 999 ₽',
+            priceValue: 3999,
             quantity: 5,
             onePrice: '800 ₽',
         }

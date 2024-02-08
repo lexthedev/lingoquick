@@ -30,6 +30,13 @@ const yandexMetrika = `
     webvisor: true
   });`
 
+const isWinterNow = () => {
+  const today = new Date();
+  const winterMonths = [1, 2, 12];
+  const thisMonth = today.getMonth();
+  return winterMonths.some(wm => wm === thisMonth);
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -57,7 +64,8 @@ export default function RootLayout({
         {children}
         {/* new year snow falling */}
         {/* <script async src="https://thecode.media/wp-content/uploads/2019/12/snowfall2020.js" /> */}
-        <script async src="/scripts/snow.js" />
+        {isWinterNow() && <script async src="/scripts/snow.js" />}
+        <script async src="https://yookassa.ru/checkout-widget/v1/checkout-widget.js"></script>
       </body>
     </html>
   )

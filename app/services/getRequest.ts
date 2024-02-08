@@ -1,12 +1,12 @@
 'use server';
-import googleSheets from "./googleSheets";
+import { googleSheets } from "./google/googleSheets";
 
-const getRequest = async () => {
+export const getRequest = async () => {
 
     const sheets = await googleSheets();
     const lastRequestPosRange = 'B10'
     const lastRequestPosReq = await sheets.spreadsheets.values.get({
-        spreadsheetId: process.env.SHEET_ID,
+        spreadsheetId: process.env.REQUESTS_SHEET_ID,
         range: lastRequestPosRange
     })
 
@@ -23,7 +23,7 @@ const getRequest = async () => {
 
 
     // const responce = await sheets.spreadsheets.values.get({
-    //     spreadsheetId: process.env.SHEET_ID,
+    //     spreadsheetId: process.env.REQUESTS_SHEET_ID,
     //     range
     // })
 
@@ -36,5 +36,3 @@ const getRequest = async () => {
     //     }
     // }
 }
-
-export default getRequest;

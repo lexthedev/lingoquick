@@ -27,6 +27,7 @@
 .price-card {
   width: 433px;
   display: flex;
+  cursor: default;
   flex-direction: column;
   text-align: center;
   align-items: center;
@@ -118,6 +119,7 @@
   }
 
   .price-card:not(.open) {
+    cursor: pointer;
     color: #696969;
     background-color: transparent;
     border: 1px solid rgb(var(--background-end-rgb));

@@ -1,8 +1,8 @@
 'use server';
 import { StudentInfo } from "../components";
-import googleSheets from "./googleSheets";
+import { googleSheets } from "./google/googleSheets";
 
-const addRequest = async (data: StudentInfo): Promise<number> => {
+export const addRequest = async (data: StudentInfo): Promise<number> => {
 
     const { name, age, phone, parent, email, language, target } = data;
     const now = new Date();
@@ -10,7 +10,7 @@ const addRequest = async (data: StudentInfo): Promise<number> => {
     const sheets = await googleSheets();
     const dataRange = 'A:H';
     const result = await sheets.spreadsheets.values.append({
-        spreadsheetId: process.env.SHEET_ID,
+        spreadsheetId: process.env.REQUESTS_SHEET_ID,
         range: dataRange,
         valueInputOption: 'USER_ENTERED', // or 'ROW'
         requestBody: {
@@ -80,5 +80,3 @@ const addRequest = async (data: StudentInfo): Promise<number> => {
     //     }
     //   }
 }
-
-export default addRequest;
