@@ -1,10 +1,10 @@
 import { GoogleAuth } from 'google-auth-library';
 import { google } from 'googleapis';
-import initGoogleAuthService from './googleService';
+import { googleAuthService } from './googleService';
 
-const googleSheets = async () => {
+export const googleSheets = async () => {
     const scopes = ["https://www.googleapis.com/auth/spreadsheets"];
-    const auth = initGoogleAuthService(scopes);
+    const auth = googleAuthService(scopes);
 
     const sheets = google.sheets({ version: 'v4', auth });
 
@@ -16,7 +16,7 @@ const googleSheets = async () => {
 
 
     // const responce = await sheets.spreadsheets.values.get({
-    //     spreadsheetId: process.env.SHEET_ID,
+    //     spreadsheetId: process.env.REQUESTS_SHEET_ID,
     //     range
     // })
 
@@ -29,5 +29,3 @@ const googleSheets = async () => {
     //     }
     // }
 }
-
-export default googleSheets;

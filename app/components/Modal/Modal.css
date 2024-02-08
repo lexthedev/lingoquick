@@ -1,9 +1,12 @@
 .modal {
   display: block;
   position: absolute;
-  top: 200px;
-  left: 50%;
-  transform: translate(-50%, 0);
+  /* top: 200px; */
+  bottom: 50%;
+  right: 50%;
+  max-height: 100%;
+  max-width: 100%;
+  transform: translate(50%, 50%);
   /* border: 1px solid var(--text-shadow); */
   border-radius: 15px;
   padding: 20px;
@@ -22,8 +25,26 @@
   height: 100%;
   position: absolute;
   top: 0;
+  color: rgb(var(--const-white));
   backdrop-filter: blur(10px);
   z-index: 9999;
+}
+
+.modal-wrapper .modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-wrapper .modal-header {
+  text-align: center;
+}
+
+.modal-wrapper .info {
+  overflow-y: scroll;
+  text-align: center;
+  scrollbar-width: none;
 }
 
 .close {
@@ -42,7 +63,7 @@
   width: 1em;
   right: 0;
   bottom: 50%;
-   background: linear-gradient(
+  background: linear-gradient(
     to left,
     rgb(var(--background-orange-start)),
     rgb(var(--background-orange-end))

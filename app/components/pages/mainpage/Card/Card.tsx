@@ -1,3 +1,8 @@
+import { ModalData } from "@/app/components";
+import Modal from "@/app/components/Modal/Modal";
+import { MouseEvent, useState } from "react";
+import { BuyCourse } from "./BuyCourse";
+
 export interface ICard {
     isOpen?: boolean;
     onClick?: () => void;
@@ -6,12 +11,28 @@ export interface ICard {
     title: string;
     oldPrice: string;
     newPrice: string;
+    priceValue: number;
     quantity: number;
     onePrice: string;
 }
 
+
 export const Card = (props: ICard) => {
-    const { isOpen, onClick, icon, title, oldPrice, newPrice, quantity, onePrice, } = props;
+    const { isOpen, onClick, icon, title, oldPrice, newPrice, priceValue, quantity, onePrice, } = props;
+    const [modalData, setModalData] = useState<ModalData>();
+
+    const onClickBuyCourse = async (event: MouseEvent<HTMLElement>) => {
+        event.preventDefault();
+        const { currentTarget } = event;
+
+        const itemName = currentTarget.getAttribute('data-item') || '';
+        const value = currentTarget.getAttribute('data-value') || '';
+
+        setModalData({
+            headerText: `Покупка пакета знятий «${itemName}»`,
+            text: <BuyCourse itemName={itemName} value={value} />
+        })
+    }
 
     return <div
         className={`price-card ${isOpen ? 'open' : ""}`}
@@ -31,10 +52,14 @@ export const Card = (props: ICard) => {
             </div>
             <p className="price-dislamer">Вы платите только за количество занятий, а подача и качество занятий остаются одинаковыми, вне зависимости от выбранного вами тарифа</p>
             <div className="register">
-                <a className="register-link" href={`/?target=Пакет занятий "${title}"`}>
+                <a className="register-link" onClick={onClickBuyCourse} data-value={priceValue} data-item={title} href={`/?target=Пакет занятий "${title}"`}>
                     <b>Записаться</b>
                 </a>
             </div>
         </div>
+        {modalData && <Modal
+            onClose={() => setModalData(undefined)}
+            {...modalData}
+        />}
     </div>
 }

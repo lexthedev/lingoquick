@@ -31,12 +31,12 @@ const Modal = (props: ModalProps) => {
         onClick={handleClose}
     >
         <div className="modal" onClick={handleClose}>
-            <h1 className="modal-header flex justify-between gap-[30px]">
+            <h1 className="modal-header">
                 {headerText}
             </h1>
             <div className="close"
                 onClick={() => onClose()}></div>
-            <div className="mt-[15px]">
+            <div className="info">
                 {text}
             </div>
         </div>
