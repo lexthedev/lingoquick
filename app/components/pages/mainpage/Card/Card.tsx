@@ -53,7 +53,7 @@ export const Card = (props: ICard) => {
             <p className="price-dislamer">Вы платите только за количество занятий, а подача и качество занятий остаются одинаковыми, вне зависимости от выбранного вами тарифа</p>
             <div className="register">
                 <a className="register-link" onClick={onClickBuyCourse} data-value={priceValue} data-item={title} href={`/?target=Пакет занятий "${title}"`}>
-                    <b>Записаться</b>
+                    <b>Приобрести</b>
                 </a>
             </div>
         </div>
