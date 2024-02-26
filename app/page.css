@@ -51,6 +51,7 @@ main::-webkit-scrollbar {
 
 .header {
   background: rgb(var(--icon-background));
+  min-height: 40px;
 }
 
 .header .navigate {
@@ -145,8 +146,7 @@ main::-webkit-scrollbar {
   animation: 1s ease-in-out 1 appearence;
 }
 
-.top-links.mobile-view,
-.burger-menu .make_request {
+.top-links.mobile-view {
   display: none;
 }
 
@@ -551,10 +551,6 @@ span.protectedNumber:before {
     display: none;
   }
 
-  .burger-menu .make_request {
-    display: block;
-  }
-
   .top-links.mobile-view {
     display: flex;
     width: 100%;
@@ -613,6 +609,18 @@ span.protectedNumber:before {
 
   .top-links.right {
     display: none;
+  }
+
+  .top-links .make_request {
+    position: relative;
+  }
+
+  .top-links .make_request a {
+    font-size: 0.8em;
+    position: absolute;
+    white-space: nowrap;
+    right: 0;
+    top: 3px;
   }
 
   .main-section-content .request-free-lesson-button {
