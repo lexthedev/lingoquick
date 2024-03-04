@@ -32,7 +32,7 @@ const yandexMetrika = `
 
 const isWinterNow = () => {
   const today = new Date();
-  const winterMonths = [1, 2, 12];
+  const winterMonths = [0, 1, 11];
   const thisMonth = today.getMonth();
   return winterMonths.some(wm => wm === thisMonth);
 }
