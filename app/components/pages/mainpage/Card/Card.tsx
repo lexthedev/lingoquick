@@ -9,8 +9,8 @@ export interface ICard {
 
     icon: any;
     title: string;
-    oldPrice: string;
-    newPrice: string;
+    oldPrice?: string;
+    price: string;
     priceValue: number;
     quantity: number;
     onePrice: string;
@@ -18,7 +18,7 @@ export interface ICard {
 
 
 export const Card = (props: ICard) => {
-    const { isOpen, onClick, icon, title, oldPrice, newPrice, priceValue, quantity, onePrice, } = props;
+    const { isOpen, onClick, icon, title, oldPrice, price, priceValue, quantity, onePrice, } = props;
     const [modalData, setModalData] = useState<ModalData>();
 
     const onClickBuyCourse = async (event: MouseEvent<HTMLElement>) => {
@@ -40,8 +40,8 @@ export const Card = (props: ICard) => {
         <div className="card-icon">{icon}</div>
         <div className="card-title">{title}</div>
         <div className="card-content">
-            <div className="card-price-old">{oldPrice}</div>
-            <div className="card-price-new">{newPrice}</div>
+            {oldPrice && <div className="card-price-old">{oldPrice}</div>}
+            <div className="card-price-new">{price}</div>
             <div className="class-quantity">
                 <div>Количество занятий:</div>
                 <div className="yellow">{quantity}</div>
