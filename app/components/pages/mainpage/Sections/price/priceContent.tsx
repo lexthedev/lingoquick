@@ -6,6 +6,7 @@ import './price.css'
 import { Lightning } from "@/app/components/Icons/Lightning";
 import { TaskList } from "@/app/components/Icons/TaskList";
 import { Sprint } from "@/app/components/Icons/Sprint";
+import { GroupCard } from "../../Card/GroupCard";
 
 export const PriceContent = () => {
     const [activeCard, setActiveCard] = useState(-1);
@@ -49,6 +50,16 @@ export const PriceContent = () => {
                 isOpen={activeCard === index}
                 onClick={() => setActiveCard(activeCard === index ? -1 : index)}
             />)}
+        </div>
+        <div>
+            <GroupCard
+                price={"4500 ₽"}
+                priceValue={4500}
+                quantity={10}
+                onePrice={"450 ₽"}
+                isOpen={activeCard === 999}
+                onClick={() => setActiveCard(activeCard === 999 ? -1 : 999)}
+            />
         </div>
     </section>
 }
