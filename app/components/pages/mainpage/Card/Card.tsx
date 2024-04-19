@@ -6,7 +6,6 @@ import { BuyCourse } from "./BuyCourse";
 export interface ICard {
     isOpen?: boolean;
     onClick?: () => void;
-
     icon: any;
     title: string;
     oldPrice?: string;
@@ -46,7 +45,7 @@ export const Card = (props: ICard) => {
                 <div>Количество занятий:</div>
                 <div className="yellow">{quantity}</div>
             </div>
-            <div className="class-one-class">
+            <div className="class-one-price">
                 <div>Стоймость одного занятия:</div>
                 <div className="yellow">{onePrice}</div>
             </div>
