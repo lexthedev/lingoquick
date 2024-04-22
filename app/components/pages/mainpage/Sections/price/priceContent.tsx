@@ -25,7 +25,7 @@ export const PriceContent = () => {
             title: '7 уроков',
             price: '5 249 ₽',
             priceValue: 5249,
-            quantity: 10,
+            quantity: 7,
             onePrice: '750 ₽',
         },
         {
