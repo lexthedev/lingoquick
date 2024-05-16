@@ -519,8 +519,11 @@ span.protectedNumber:before {
   section.content.tg {
     order: 4;
   }
-  section.content.faq {
+  section.content.teachers {
     order: 5;
+  }
+  section.content.faq {
+    order: 6;
   }
 }
 

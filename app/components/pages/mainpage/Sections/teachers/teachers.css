@@ -1,0 +1,283 @@
+.teachers {
+  position: relative;
+  padding: 20px;
+  background-color: rgb(var(--invert-font-color));
+}
+
+.teachers .placeholder {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px;
+  transition: left 0.3s ease-in;
+}
+
+.teachers.open .placeholder {
+  left: 100%;
+}
+
+.teachers .placeholder .title {
+  width: 30%;
+  min-width: 400px;
+}
+
+.teachers .placeholder .description {
+  margin: auto 0 0 auto;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 400px;
+}
+
+.teachers .placeholder .description-text {
+  padding: 20px;
+  background-color: rgb(var(--grey-background));
+  border-radius: 20px;
+}
+
+.teachers .placeholder .teacher-list-btn {
+  padding: 10px 20px;
+  background-color: rgb(var(--yellow-background));
+  border-radius: 20px;
+  max-width: fit-content;
+  margin: 0 0 0 auto;
+  color: rgba(var(--invert-font-color));
+  cursor: pointer;
+}
+
+.teachers .teacher-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.teachers.open .teacher-list {
+  opacity: 1;
+}
+
+.teacher-list .describe {
+  width: 50%;
+  padding: 20px;
+  background-color: rgb(var(--grey-background));
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.teacher-list .teacher-slider-wrap {
+  width: 50%;
+  margin: auto 0 auto auto;
+  min-height: 70%;
+  z-index: 2;
+}
+
+.teacher-list .teacher {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-image: var(--bgsrc);
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.teacher-list .teacher .bio {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  margin: auto 0 0 auto;
+  padding: 20px;
+  background-color: rgb(var(--grey-background));
+  border-radius: 20px;
+  max-width: calc(100% - 40px);
+  z-index: 2;
+}
+
+/* background */
+
+.float-form {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid rgb(var(--yellow-background));
+
+  transition: border-width 0.3s ease-in, left 0.3s ease-in, top 0.3s ease-in;
+  z-index: 0;
+}
+
+.float-form-1 {
+  border-left-width: 45px;
+  border-right-width: 45px;
+  border-bottom-width: 80px;
+
+  top: 20%;
+  left: 30%;
+}
+
+.float-form-2 {
+  border-left-width: 45px;
+  border-right-width: 45px;
+  border-bottom-width: 80px;
+
+  top: 40%;
+  left: 50%;
+}
+
+.float-form-3 {
+  border-left-width: 60px;
+  border-right-width: 60px;
+  border-bottom-width: 100px;
+
+  top: 80%;
+  left: 25%;
+}
+
+.float-form-4 {
+  border-left-width: 23px;
+  border-right-width: 23px;
+  border-bottom-width: 40px;
+
+  top: 80%;
+  left: 10%;
+}
+
+.float-form-5 {
+  border-left-width: 60px;
+  border-right-width: 60px;
+  border-bottom-width: 100px;
+
+  opacity: 0.6;
+
+  top: 10%;
+  left: 55%;
+}
+
+.float-form-6 {
+  border-left-width: 60px;
+  border-right-width: 60px;
+  border-bottom-width: 100px;
+
+  opacity: 0.2;
+
+  top: 40%;
+  left: 15%;
+}
+
+.float-form-7 {
+  border-left-width: 15px;
+  border-right-width: 15px;
+  border-bottom-width: 20px;
+
+  opacity: 0.2;
+
+  top: 28%;
+  left: 5%;
+}
+
+/* on open */
+
+.teachers.open .float-form-1 {
+  border: 80px solid rgb(var(--yellow-background));
+  border-radius: 50%;
+
+  top: 20%;
+  left: 30%;
+}
+
+.teachers.open .float-form-2 {
+  border: 80px solid rgb(var(--yellow-background));
+  border-radius: 50%;
+
+  top: 40%;
+  left: 50%;
+}
+
+.teachers.open .float-form-3 {
+  border: 25px solid rgb(var(--yellow-background));
+  border-radius: 50%;
+
+  top: 80%;
+  left: 25%;
+}
+
+.teachers.open .float-form-4 {
+  border: 40px solid rgb(var(--yellow-background));
+  border-radius: 50%;
+
+  top: 84%;
+  left: 10%;
+}
+
+.teachers.open .float-form-5 {
+  border: 100px solid rgb(var(--yellow-background));
+  border-radius: 50%;
+
+  opacity: 0.6;
+
+  top: 1%;
+  left: 55%;
+}
+
+.teachers.open .float-form-6 {
+  border: 86px solid rgb(var(--yellow-background));
+  border-radius: 50%;
+
+  opacity: 0.2;
+
+  top: 40%;
+  left: 15%;
+}
+
+.teachers.open .float-form-7 {
+  border: 20px solid rgb(var(--yellow-background));
+  border-radius: 50%;
+
+  opacity: 0.2;
+
+  top: 28%;
+  left: 5%;
+}
+
+/* background */
+
+@media screen and (max-width: 1200px) {
+  .teacher-list .describe,
+  .teacher-list .teacher-slider-wrap {
+    margin: 0 auto;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .teacher-list .describe,
+  .teacher-list .teacher-slider-wrap {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .teacher-list .teacher .bio {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .teacher-list .teacher {
+    row-gap: 20px;
+  }
+
+  .teacher-list .teacher .bio {
+    position: relative;
+    bottom: unset;
+    right: unset;
+    margin: 0 auto;
+    font-size: 0.7rem;
+  }
+}

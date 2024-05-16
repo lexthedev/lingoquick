@@ -58,11 +58,6 @@
   flex: 1 1 0;
 }
 
-.price-card.wide .card-icon,
-.price-card.wide .card-title {
-  display: none;
-}
-
 .price-card-outer-title {
   color: rgb(var(--background-end-rgb));
 }
@@ -183,9 +178,13 @@
     display: none;
   }
 
-  .price-card.wide .card-icon,
-  .price-card.wide .card-title {
+  .price-card .card-icon {
     display: block;
+  }
+
+  .price-card .card-title {
+    display: block;
+    color: rgb(var(--background-end-rgb));
   }
 }
 
