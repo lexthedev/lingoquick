@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { MouseEvent, MouseEventHandler, useState } from 'react';
 import './teachers.css';
 import { Carousel } from 'react-responsive-carousel';
 
@@ -30,6 +30,10 @@ const teachers: Array<{ img: string, html: string }> = [{
 export const Teachers = () => {
 
     const [isOpen, setOpen] = useState(false);
+    const showTeachers = (e: MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        setOpen(true)
+    }
 
     return <section className={`content teachers ${isOpen && 'open'}`}>
         <div className='float-form float-form-1' />
@@ -48,7 +52,7 @@ export const Teachers = () => {
                 <a className='teacher-list-btn' onClick={() => setOpen(true)}><span>Карточки преподавателей</span></a>
             </div>
         </div>
-        <div className='teacher-list'>
+        {isOpen && <div className='teacher-list'>
             <div className='describe'>Преподавательский состав онлайн-школы <span className='gold-logo'>Lingo Quick</span> —  молодые преподаватели, горящие своим делом и всегда готовые помочь вам на пути изучения нового языка или повышения квалификации! Здесь вы можете познакомиться с вашим будущим преподавателем еще до пробного урока и выбрать подходящего вам, основываясь на указанных характеристиках.</div>
             <div className='teacher-slider-wrap'>
                 <Carousel
@@ -76,5 +80,6 @@ export const Teachers = () => {
                 </Carousel>
             </div>
         </div>
-    </section>
+        }
+    </section >
 }

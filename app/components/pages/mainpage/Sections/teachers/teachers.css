@@ -1,7 +1,7 @@
 .teachers {
   position: relative;
   padding: 20px;
-  background-color: rgb(var(--invert-font-color));
+  background-color: rgb(var(--const-black));
 }
 
 .teachers .placeholder {
@@ -22,7 +22,6 @@
 }
 
 .teachers .placeholder .title {
-  color: rgba(var(--background-end-rgb));
   width: 30%;
   min-width: 400px;
 }
@@ -48,7 +47,7 @@
   border-radius: 20px;
   max-width: fit-content;
   margin: 0 0 0 auto;
-  color: rgba(var(--invert-font-color));
+  color: rgba(var(--const-black));
   cursor: pointer;
 }
 
@@ -85,6 +84,7 @@
   flex-direction: column;
   background-image: var(--bgsrc);
   border-radius: 20px;
+  gap: 20px;
   z-index: 2;
 }
 
@@ -280,5 +280,10 @@
     right: unset;
     margin: 0 auto;
     font-size: 0.7rem;
+  }
+
+  .teachers .placeholder .title,
+  .teachers .placeholder .description {
+    min-width: 300px;
   }
 }
