@@ -186,6 +186,10 @@
     display: block;
     color: rgb(var(--background-end-rgb));
   }
+
+  .price-card.open .card-title {
+    color: rgb(var(--invert-font-color));
+  }
 }
 
 @media screen and (max-width: 450px) {
